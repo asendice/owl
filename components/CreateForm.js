@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import CategoryItem from './CategoryItem';
+import Icon from "react-native-vector-icons/dist/FontAwesome";
 import {
   View,
   TouchableOpacity,
@@ -6,9 +8,27 @@ import {
   TextInput,
   StyleSheet,
   Alert,
+  FlatList,
 } from 'react-native';
 
 const CreateForm = () => {
+  const [categories, setCategories] = useState([
+    {
+      id: 0,
+      name: 'Work',
+    },
+    {
+      id: 1,
+      name: 'Home',
+    },
+    {
+      id: 2,
+      name: 'Health',
+    },
+  ]);
+
+  const renderCategories = ({item}) => <CategoryItem name={item.name} />;
+
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -34,12 +54,20 @@ const CreateForm = () => {
       </View>
       <View style={styles.categoryContainer}>
         <Text style={styles.header}>Category</Text>
+        <View style={styles.flatList}>
+          <FlatList
+            data={categories}
+            renderItem={renderCategories}
+            horizontal={true}
+          />
+          <Icon name="fa" size={24} color="#00c7be"/>
+        </View>
       </View>
       <TouchableOpacity
         style={styles.button}
         onPress={() => Alert.alert('pressed')}>
-          <Text style={styles.buttonText}>CREATE TASK</Text>
-        </TouchableOpacity>
+        <Text style={styles.buttonText}>CREATE TASK</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -87,19 +115,26 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   button: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#00c7be',
     borderWidth: 1,
     borderRadius: 20,
-    borderColor: "#00c7be",
+    borderColor: '#00c7be',
     height: 40,
   },
   buttonText: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 18,
-    fontWeight: "600",
-  }
+    fontWeight: '600',
+  },
+  flatList: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+    padding: 10,
+    backgroundColor: "pink"
+  },
 });
 
 export default CreateForm;
