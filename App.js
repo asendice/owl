@@ -1,5 +1,6 @@
 import React from 'react';
-import CreateTask from "./components/CreateTask"
+import CreateTask from './components/CreateTask';
+import Navigation from './components/Navigation';
 import {
   SafeAreaView,
   ScrollView,
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <CreateTask />
+      <Navigation />
     </View>
   );
 };

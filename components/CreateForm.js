@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 const CreateForm = () => {
+  const [task, setTask] = useState({});
   const [categories, setCategories] = useState([
     {
       id: 0,
@@ -60,7 +61,7 @@ const CreateForm = () => {
             renderItem={renderCategories}
             horizontal={true}
           />
-          <Icon name="fa" size={24} color="#00c7be"/>
+          <Icon name="plus" size={24} color="#00c7be"/>
         </View>
       </View>
       <TouchableOpacity
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '100%',
     alignSelf: 'center',
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: '#d3d3d3',
     borderRadius: 10,
   },
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   input: {
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     paddingBottom: 5,
     borderColor: '#d3d3d3',
   },
