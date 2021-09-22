@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
-import Icon from "react-native-vector-icons/dist/FontAwesome";
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
+Icon.loadFont();
 import {
   View,
   TouchableOpacity,
@@ -12,7 +13,7 @@ import {
 } from 'react-native';
 
 const CreateForm = () => {
-  const [task, setTask] = useState({});
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [categories, setCategories] = useState([
     {
       id: 0,
@@ -28,7 +29,14 @@ const CreateForm = () => {
     },
   ]);
 
-  const renderCategories = ({item}) => <CategoryItem name={item.name} />;
+  console.log(selectedCategory, "selectedCategory")
+
+  const renderCategories = ({item}) => (
+    <CategoryItem
+      setSelectedCategory={setSelectedCategory}
+      name={item.name}
+    />
+  );
 
   return (
     <View style={styles.container}>
@@ -61,7 +69,9 @@ const CreateForm = () => {
             renderItem={renderCategories}
             horizontal={true}
           />
-          <Icon name="plus" size={24} color="#00c7be"/>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Icon name="plus" size={24} color="#fff" />
+          </TouchableOpacity>
         </View>
       </View>
       <TouchableOpacity
@@ -130,11 +140,18 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   flatList: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginBottom: 10,
     padding: 10,
-    backgroundColor: "pink"
+  },
+  iconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#00c7be',
+    height: 40,
+    width: 40,
+    borderRadius: 100,
   },
 });
 

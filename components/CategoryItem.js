@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-const CategoryItem = ({name}) => {
+const CategoryItem = ({name, setSelectedCategory}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => setSelectedCategory(name)}>
       <Text style={styles.text}>{name}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -13,15 +13,15 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
     borderRadius: 10,
-    borderColor: "#0c817b",
+    borderColor: '#333',
     padding: 10,
     width: 80,
-    backgroundColor: "#0c817b",
-    alignItems: "center",
+    backgroundColor: '#333',
+    alignItems: 'center',
     marginRight: 10,
   },
   text: {
-    color: "#fff"
+    color: '#fff',
   },
 });
 

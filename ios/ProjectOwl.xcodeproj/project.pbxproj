@@ -8,28 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* ProjectOwlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ProjectOwlTests.m */; };
-		02755337CE7F092F140D962C /* libPods-ProjectOwl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4477961C1367D6F768BFC6B /* libPods-ProjectOwl.a */; };
-		064BBEFA608446858AC1C8B6 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA042842E735485985FDECE3 /* MaterialCommunityIcons.ttf */; };
-		0C5B6FE6FCFF4657B05DD4EB /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E7A9EDF50F34B10AE520214 /* EvilIcons.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		1AED9CFD11F742DA804572F9 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88805EF99A3642BC8D527441 /* Foundation.ttf */; };
-		1B163FD820EE4A33B8F3E30A /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F4B2D7A096F4CB191C72E5A /* FontAwesome5_Regular.ttf */; };
-		44464543AF6C47EC95EDF443 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8393D1AA1AB34FD283F632C7 /* Octicons.ttf */; };
-		4C5F7AE86B8A40C5A7B9929A /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 282FEF85E72742D7BE51A82B /* FontAwesome5_Solid.ttf */; };
-		5A2AFFF1A3894FDAB2A548D9 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F89EFCD91A04458F8AEE5783 /* FontAwesome5_Brands.ttf */; };
-		6F680DAE34F5B7B8CB5E1C1F /* libPods-ProjectOwl-ProjectOwlTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E082EC45DB44CA410EF12A /* libPods-ProjectOwl-ProjectOwlTests.a */; };
-		7127231485C64787BCD4AB5A /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D849541F00744AB8A2FA140 /* MaterialIcons.ttf */; };
-		7ACB6DB52CF644EAB1A53586 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FF746DEA0DD4FA688941CA4 /* Entypo.ttf */; };
-		7DEC26A030584299A76AC200 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE2B268C84D4D629BFC19E2 /* Zocial.ttf */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		21A4B3FC786B68090B4DB95D /* libPods-ProjectOwl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C91D0A017FC253F1A725B618 /* libPods-ProjectOwl.a */; };
+		250C7BBD4967E28036931BA3 /* libPods-ProjectOwl-ProjectOwlTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B8501DD21087AF9A11371C /* libPods-ProjectOwl-ProjectOwlTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9FBDD0A0D5784DD3A544D16F /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076E4EA7AB4D4B789694CABA /* Ionicons.ttf */; };
-		AAA00DAE067F455E8538347E /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE40953394D44EF5A5936409 /* SimpleLineIcons.ttf */; };
-		C045E5201AEF4AE789288AAB /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 462DCF6A492F44AEAB145899 /* AntDesign.ttf */; };
-		C275182026FABC9500C797B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		D622E9F03E4945E09C0F41C6 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B83A66FAC13C47A88D8A9258 /* Feather.ttf */; };
-		F253164E6D1B4BC8A9DE671E /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C46A418B8974778B4F57B1C /* Fontisto.ttf */; };
-		FBE14009E3A940D8B4215BD3 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 611E7B3C80864EC2A5EAC14E /* FontAwesome.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,36 +30,20 @@
 		00E356EE1AD99517003FC87E /* ProjectOwlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectOwlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ProjectOwlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectOwlTests.m; sourceTree = "<group>"; };
-		076E4EA7AB4D4B789694CABA /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		0C46A418B8974778B4F57B1C /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		0FBA63BD223B319E95449713 /* Pods-ProjectOwl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOwl.debug.xcconfig"; path = "Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ProjectOwl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectOwl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ProjectOwl/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ProjectOwl/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ProjectOwl/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ProjectOwl/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1AE2B268C84D4D629BFC19E2 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
-		282FEF85E72742D7BE51A82B /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		289E0F6E7038DEB332970D62 /* Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2D849541F00744AB8A2FA140 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		462DCF6A492F44AEAB145899 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		611E7B3C80864EC2A5EAC14E /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		7F4B2D7A096F4CB191C72E5A /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ProjectOwl/main.m; sourceTree = "<group>"; };
+		177329420334A4A8ABB2EDE7 /* Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig"; sourceTree = "<group>"; };
+		48E2A0878967F61E65F25D07 /* Pods-ProjectOwl-ProjectOwlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOwl-ProjectOwlTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests.release.xcconfig"; sourceTree = "<group>"; };
+		77B8501DD21087AF9A11371C /* libPods-ProjectOwl-ProjectOwlTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectOwl-ProjectOwlTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ProjectOwl/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8393D1AA1AB34FD283F632C7 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		88805EF99A3642BC8D527441 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		8FF746DEA0DD4FA688941CA4 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		9E7A9EDF50F34B10AE520214 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		B83A66FAC13C47A88D8A9258 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		BE40953394D44EF5A5936409 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		C4E082EC45DB44CA410EF12A /* libPods-ProjectOwl-ProjectOwlTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectOwl-ProjectOwlTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA042842E735485985FDECE3 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		E012BA4688D5B426B0A81F86 /* Pods-ProjectOwl-ProjectOwlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOwl-ProjectOwlTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests.release.xcconfig"; sourceTree = "<group>"; };
-		E14C93C2BB09FF27E611029B /* Pods-ProjectOwl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOwl.release.xcconfig"; path = "Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl.release.xcconfig"; sourceTree = "<group>"; };
-		E4477961C1367D6F768BFC6B /* libPods-ProjectOwl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectOwl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91D0A017FC253F1A725B618 /* libPods-ProjectOwl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectOwl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F89EFCD91A04458F8AEE5783 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		F9A1CC1F5DFB1172103E6E3C /* Pods-ProjectOwl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOwl.debug.xcconfig"; path = "Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl.debug.xcconfig"; sourceTree = "<group>"; };
+		FFB6457AE524327D1CD24D9F /* Pods-ProjectOwl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOwl.release.xcconfig"; path = "Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F680DAE34F5B7B8CB5E1C1F /* libPods-ProjectOwl-ProjectOwlTests.a in Frameworks */,
+				250C7BBD4967E28036931BA3 /* libPods-ProjectOwl-ProjectOwlTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02755337CE7F092F140D962C /* libPods-ProjectOwl.a in Frameworks */,
+				21A4B3FC786B68090B4DB95D /* libPods-ProjectOwl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +69,6 @@
 		00E356EF1AD99517003FC87E /* ProjectOwlTests */ = {
 			isa = PBXGroup;
 			children = (
-				13B07FB71A68108700A75B9A /* main.m */,
 				00E356F21AD99517003FC87E /* ProjectOwlTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
@@ -124,51 +91,30 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = ProjectOwl;
-			sourceTree = "<group>";
-		};
-		1F3F10A79BBE4237B86EEB40 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				462DCF6A492F44AEAB145899 /* AntDesign.ttf */,
-				8FF746DEA0DD4FA688941CA4 /* Entypo.ttf */,
-				9E7A9EDF50F34B10AE520214 /* EvilIcons.ttf */,
-				B83A66FAC13C47A88D8A9258 /* Feather.ttf */,
-				611E7B3C80864EC2A5EAC14E /* FontAwesome.ttf */,
-				F89EFCD91A04458F8AEE5783 /* FontAwesome5_Brands.ttf */,
-				7F4B2D7A096F4CB191C72E5A /* FontAwesome5_Regular.ttf */,
-				282FEF85E72742D7BE51A82B /* FontAwesome5_Solid.ttf */,
-				0C46A418B8974778B4F57B1C /* Fontisto.ttf */,
-				88805EF99A3642BC8D527441 /* Foundation.ttf */,
-				076E4EA7AB4D4B789694CABA /* Ionicons.ttf */,
-				CA042842E735485985FDECE3 /* MaterialCommunityIcons.ttf */,
-				2D849541F00744AB8A2FA140 /* MaterialIcons.ttf */,
-				8393D1AA1AB34FD283F632C7 /* Octicons.ttf */,
-				BE40953394D44EF5A5936409 /* SimpleLineIcons.ttf */,
-				1AE2B268C84D4D629BFC19E2 /* Zocial.ttf */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				E4477961C1367D6F768BFC6B /* libPods-ProjectOwl.a */,
-				C4E082EC45DB44CA410EF12A /* libPods-ProjectOwl-ProjectOwlTests.a */,
+				C91D0A017FC253F1A725B618 /* libPods-ProjectOwl.a */,
+				77B8501DD21087AF9A11371C /* libPods-ProjectOwl-ProjectOwlTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		351354185B1FAD1B2C20FCC1 /* Pods */ = {
+		5568E0DF46E4274B39F045C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F9A1CC1F5DFB1172103E6E3C /* Pods-ProjectOwl.debug.xcconfig */,
-				E14C93C2BB09FF27E611029B /* Pods-ProjectOwl.release.xcconfig */,
-				289E0F6E7038DEB332970D62 /* Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig */,
-				E012BA4688D5B426B0A81F86 /* Pods-ProjectOwl-ProjectOwlTests.release.xcconfig */,
+				0FBA63BD223B319E95449713 /* Pods-ProjectOwl.debug.xcconfig */,
+				FFB6457AE524327D1CD24D9F /* Pods-ProjectOwl.release.xcconfig */,
+				177329420334A4A8ABB2EDE7 /* Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig */,
+				48E2A0878967F61E65F25D07 /* Pods-ProjectOwl-ProjectOwlTests.release.xcconfig */,
 			);
+			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -187,8 +133,7 @@
 				00E356EF1AD99517003FC87E /* ProjectOwlTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				351354185B1FAD1B2C20FCC1 /* Pods */,
-				1F3F10A79BBE4237B86EEB40 /* Resources */,
+				5568E0DF46E4274B39F045C4 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -211,12 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ProjectOwlTests" */;
 			buildPhases = (
-				38C529B04DA0078DBA3976B8 /* [CP] Check Pods Manifest.lock */,
+				D62D255A6493C6E96E5B1CE9 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				8E5E39BCF562FD2139C3743D /* [CP] Embed Pods Frameworks */,
-				71E6AC5246D420D1E54E9B30 /* [CP] Copy Pods Resources */,
+				71643AA39B42849C29F56A75 /* [CP] Embed Pods Frameworks */,
+				E265834B9950F36669E1F78E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,14 +177,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ProjectOwl" */;
 			buildPhases = (
-				9C75B6E4952A77695D97166E /* [CP] Check Pods Manifest.lock */,
+				85D2D931D35E4C0DD83D04B4 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				7B664E06BFF2B6BD06D053CE /* [CP] Embed Pods Frameworks */,
-				3A104F63317E4F3A0F9A01C3 /* [CP] Copy Pods Resources */,
+				EB401FC8B043D1BD5C9B2A6D /* [CP] Embed Pods Frameworks */,
+				C6296D8C61B8F5B4ACFB1D20 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,7 +201,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -300,22 +245,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				C045E5201AEF4AE789288AAB /* AntDesign.ttf in Resources */,
-				7ACB6DB52CF644EAB1A53586 /* Entypo.ttf in Resources */,
-				0C5B6FE6FCFF4657B05DD4EB /* EvilIcons.ttf in Resources */,
-				D622E9F03E4945E09C0F41C6 /* Feather.ttf in Resources */,
-				FBE14009E3A940D8B4215BD3 /* FontAwesome.ttf in Resources */,
-				5A2AFFF1A3894FDAB2A548D9 /* FontAwesome5_Brands.ttf in Resources */,
-				1B163FD820EE4A33B8F3E30A /* FontAwesome5_Regular.ttf in Resources */,
-				4C5F7AE86B8A40C5A7B9929A /* FontAwesome5_Solid.ttf in Resources */,
-				F253164E6D1B4BC8A9DE671E /* Fontisto.ttf in Resources */,
-				1AED9CFD11F742DA804572F9 /* Foundation.ttf in Resources */,
-				9FBDD0A0D5784DD3A544D16F /* Ionicons.ttf in Resources */,
-				064BBEFA608446858AC1C8B6 /* MaterialCommunityIcons.ttf in Resources */,
-				7127231485C64787BCD4AB5A /* MaterialIcons.ttf in Resources */,
-				44464543AF6C47EC95EDF443 /* Octicons.ttf in Resources */,
-				AAA00DAE067F455E8538347E /* SimpleLineIcons.ttf in Resources */,
-				7DEC26A030584299A76AC200 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +265,63 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		38C529B04DA0078DBA3976B8 /* [CP] Check Pods Manifest.lock */ = {
+		71643AA39B42849C29F56A75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85D2D931D35E4C0DD83D04B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectOwl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6296D8C61B8F5B4ACFB1D20 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D62D255A6493C6E96E5B1CE9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -358,24 +343,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3A104F63317E4F3A0F9A01C3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71E6AC5246D420D1E54E9B30 /* [CP] Copy Pods Resources */ = {
+		E265834B9950F36669E1F78E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,7 +360,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7B664E06BFF2B6BD06D053CE /* [CP] Embed Pods Frameworks */ = {
+		EB401FC8B043D1BD5C9B2A6D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -407,45 +375,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl/Pods-ProjectOwl-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8E5E39BCF562FD2139C3743D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectOwl-ProjectOwlTests/Pods-ProjectOwl-ProjectOwlTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9C75B6E4952A77695D97166E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ProjectOwl-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -474,7 +403,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C275182026FABC9500C797B6 /* main.m in Sources */,
 				00E356F31AD99517003FC87E /* ProjectOwlTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,16 +429,15 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 289E0F6E7038DEB332970D62 /* Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig */;
+			baseConfigurationReference = 177329420334A4A8ABB2EDE7 /* Pods-ProjectOwl-ProjectOwlTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ProjectOwlTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,13 +456,12 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E012BA4688D5B426B0A81F86 /* Pods-ProjectOwl-ProjectOwlTests.release.xcconfig */;
+			baseConfigurationReference = 48E2A0878967F61E65F25D07 /* Pods-ProjectOwl-ProjectOwlTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ProjectOwlTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,7 +480,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9A1CC1F5DFB1172103E6E3C /* Pods-ProjectOwl.debug.xcconfig */;
+			baseConfigurationReference = 0FBA63BD223B319E95449713 /* Pods-ProjectOwl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -579,7 +506,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E14C93C2BB09FF27E611029B /* Pods-ProjectOwl.release.xcconfig */;
+			baseConfigurationReference = FFB6457AE524327D1CD24D9F /* Pods-ProjectOwl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -650,7 +577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -708,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
