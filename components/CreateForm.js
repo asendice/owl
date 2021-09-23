@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
 import DatePicker from 'react-native-date-picker';
+import {readDate, readTime} from '../utils/auth';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {
@@ -37,9 +38,6 @@ const CreateForm = () => {
     },
   ]);
 
-  console.log(JSON.stringify(date), 'date');
-  console.log(date, 'date');
-
   const onCreateTaskPress = () => {
     console.log(title, 'title');
     console.log(date.toString(), 'date');
@@ -47,6 +45,8 @@ const CreateForm = () => {
     console.log(desc, 'desc');
     console.log(selectedCategory, 'selectedCategory');
   };
+
+  console.log(time.toString(), 'time');
 
   const renderCategories = ({item}) => (
     <CategoryItem
@@ -79,7 +79,7 @@ const CreateForm = () => {
         <View style={styles.dateContainer}>
           <Text style={styles.header}>Date</Text>
           <View style={styles.inputContainer}>
-            <Text>{date.toString()}</Text>
+            <Text style={styles.whenText}>{readDate(date)}</Text>
             <DatePicker
               modal
               mode="date"
@@ -105,7 +105,7 @@ const CreateForm = () => {
         <View style={styles.timeContainer}>
           <Text style={styles.header}>Time</Text>
           <View style={styles.inputContainer}>
-            <Text>{time.toString()}</Text>
+            <Text style={styles.whenText}>{readTime(time)}</Text>
             <DatePicker
               modal
               mode="time"
@@ -135,6 +135,8 @@ const CreateForm = () => {
           style={styles.input}
           placeholder="Description of this Task"
           onChangeText={setDesc}
+          multiline
+          maxLength={100}
         />
       </View>
       <View style={styles.categoryContainer}>
@@ -226,6 +228,7 @@ const styles = StyleSheet.create({
     width: 40,
     borderRadius: 100,
   },
+
 });
 
 export default CreateForm;

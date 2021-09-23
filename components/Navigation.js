@@ -1,19 +1,21 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
+Icon.loadFont();
 import {View, Text, StyleSheet} from 'react-native';
 const Navigation = () => {
   return (
     <View style={styles.navigation}>
       <View style={styles.navIcons}>
-        <Text>H</Text>
+        <Icon name="home" size={24} color="#00c7be" />
       </View>
       <View style={styles.navIcons}>
-        <Text>H</Text>
+        <Icon name="home" size={24} color="#00c7be" />
       </View>
       <View style={styles.navIcons}>
-        <Text>H</Text>
+        <Icon name="home" size={24} color="#00c7be" />
       </View>
       <View style={styles.navIcons}>
-        <Text>H</Text>
+        <Icon name="home" size={24} color="#00c7be" />
       </View>
     </View>
   );
@@ -30,12 +32,10 @@ const styles = StyleSheet.create({
     height: 80,
     borderTopWidth: 1,
     borderTopColor: '#d3d3d3',
+    backgroundColor: "#333"
   },
   navIcons: {
-    borderWidth: 1,
-    borderColor: '#fff',
     padding: 20,
-    borderRadius: 100,
   },
 });
 
