@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
+import DatePicker from 'react-native-date-picker';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {
   View,
+  SafeAreaView,
   TouchableOpacity,
   Text,
   TextInput,
@@ -13,7 +15,13 @@ import {
 } from 'react-native';
 
 const CreateForm = () => {
+  const [open, setOpen] = useState(false);
+  const [openTime, setOpenTime] = useState(false);
+  const [time, setTime] = useState(new Date());
+  const [date, setDate] = useState(new Date());
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
   const [categories, setCategories] = useState([
     {
       id: 0,
@@ -29,36 +37,104 @@ const CreateForm = () => {
     },
   ]);
 
-  console.log(selectedCategory, "selectedCategory")
+  console.log(JSON.stringify(date), 'date');
+  console.log(date, 'date');
+
+  const onCreateTaskPress = () => {
+    console.log(title, 'title');
+    console.log(date.toString(), 'date');
+    console.log(time.toString(), 'time');
+    console.log(desc, 'desc');
+    console.log(selectedCategory, 'selectedCategory');
+  };
 
   const renderCategories = ({item}) => (
     <CategoryItem
       setSelectedCategory={setSelectedCategory}
       name={item.name}
+      selectedCategory={selectedCategory}
     />
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>
         <Text>Title</Text>
-        <TextInput style={styles.titleInput} placeholder="Do The Dishes" />
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.titleInput}
+            placeholder="Title of this Task"
+            onChangeText={setTitle}
+            value={title}
+          />
+          <Icon
+            name="times"
+            size={24}
+            color="#d3d3d3"
+            onPress={() => setTitle('')}
+          />
+        </View>
       </View>
       <View style={styles.whenContainer}>
         <View style={styles.dateContainer}>
           <Text style={styles.header}>Date</Text>
-          <TextInput style={styles.input} placeholder="September 21, 2021" />
+          <View style={styles.inputContainer}>
+            <Text>{date.toString()}</Text>
+            <DatePicker
+              modal
+              mode="date"
+              open={open}
+              date={date}
+              onConfirm={date => {
+                setOpen(false);
+                setDate(date);
+              }}
+              onCancel={() => {
+                setOpen(false);
+              }}
+            />
+            <Icon
+              name="calendar"
+              size={20}
+              color="#00c7be"
+              style={{marginBottom: 6}}
+              onPress={() => setOpen(true)}
+            />
+          </View>
         </View>
         <View style={styles.timeContainer}>
           <Text style={styles.header}>Time</Text>
-          <TextInput style={styles.input} placeholder="10:00 AM" />
+          <View style={styles.inputContainer}>
+            <Text>{time.toString()}</Text>
+            <DatePicker
+              modal
+              mode="time"
+              date={time}
+              open={openTime}
+              onConfirm={time => {
+                setOpenTime(false);
+                setTime(time);
+              }}
+              onCancel={() => {
+                setOpenTime(false);
+              }}
+            />
+            <Icon
+              name="clock-o"
+              size={20}
+              color="#00c7be"
+              style={{marginBottom: 6}}
+              onPress={() => setOpenTime(true)}
+            />
+          </View>
         </View>
       </View>
       <View style={styles.desctiptionContainer}>
         <Text style={styles.header}>Description</Text>
         <TextInput
           style={styles.input}
-          placeholder="Clean the dishes real good"
+          placeholder="Description of this Task"
+          onChangeText={setDesc}
         />
       </View>
       <View style={styles.categoryContainer}>
@@ -76,20 +152,21 @@ const CreateForm = () => {
       </View>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => Alert.alert('pressed')}>
+        onPress={() => onCreateTaskPress()}>
         <Text style={styles.buttonText}>CREATE TASK</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     width: '90%',
+    flex: 1,
     alignSelf: 'center',
+    justifyContent: 'space-evenly',
   },
   titleContainer: {
-    marginTop: 20,
     padding: 10,
     width: '100%',
     alignSelf: 'center',
@@ -97,33 +174,29 @@ const styles = StyleSheet.create({
     borderColor: '#d3d3d3',
     borderRadius: 10,
   },
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   titleInput: {
     padding: 5,
   },
   whenContainer: {
-    marginTop: 25,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   dateContainer: {
     width: 180,
+    borderBottomWidth: 1,
+    borderBottomColor: '#d3d3d3',
   },
   timeContainer: {
     width: 140,
+    borderBottomWidth: 1,
+    borderBottomColor: '#d3d3d3',
   },
   header: {
     marginBottom: 10,
-  },
-  desctiptionContainer: {
-    marginTop: 40,
-  },
-  input: {
-    borderBottomWidth: 1,
-    paddingBottom: 5,
-    borderColor: '#d3d3d3',
-  },
-  categoryContainer: {
-    marginTop: 25,
   },
   button: {
     alignItems: 'center',
