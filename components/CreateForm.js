@@ -137,7 +137,7 @@ const CreateForm = () => {
         <Text style={styles.header}>Goal</Text>
         <TextInput
           style={[styles.input, {height: 30}]}
-          placeholder="Goal of this Project"
+          placeholder="Goal of your Project"
           onChangeText={setDesc}
           multiline
           maxLength={100}
