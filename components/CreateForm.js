@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
 import CategoryModal from './CategoryModal';
 import DatePicker from 'react-native-date-picker';
-import {readDate, readTime} from '../utils/auth';
+// import {readDate, readTime} from '../utils/auth';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {
@@ -15,7 +15,7 @@ import {
   FlatList,
 } from 'react-native';
 
-const CreateForm = () => {
+const CreateForm = ({setProj}) => {
   const [open, setOpen] = useState(false);
   const [openTime, setOpenTime] = useState(false);
   const [openModal, setOpenModal] = useState(false);
@@ -40,12 +40,30 @@ const CreateForm = () => {
     },
   ]);
 
+  const readDate = str => {
+    let newDate = str.toString().slice(4, 15);
+    return newDate.slice(0, 6) + ',' + newDate.slice(6, 15);
+  };
+
+  const readTime = str => {
+    let time = str.toString().slice(16, 24);
+    let twelve = Number(time.slice(0, 2));
+    if (twelve > 12) {
+      return twelve - 12 + ':' + time.slice(3, 5) + 'PM';
+    } else {
+      return twelve + ':' + time.slice(3, 5) + 'AM';
+    }
+  };
+
   const onCreateProjPress = () => {
-    console.log(title, 'title');
-    console.log(readDate(date), 'date');
-    console.log(readTime(time), 'time');
-    console.log(desc, 'desc');
-    console.log(selectedCategory, 'selectedCategory');
+    let obj = {
+      title: title,
+      date: readDate(date),
+      time: readDate(time),
+      desc: desc,
+      category: selectedCategory,
+    };
+    setProj(obj);
   };
 
   const renderCategories = ({item}) => (
@@ -181,7 +199,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'center',
     justifyContent: 'space-evenly',
-
   },
   titleContainer: {
     padding: 7,
@@ -190,7 +207,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#d3d3d3',
     borderRadius: 10,
-    marginTop: -40
+    marginTop: -40,
   },
   inputContainer: {
     flexDirection: 'row',
@@ -230,7 +247,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: '#00c7be',
     height: 40,
-    marginTop: -40
+    marginTop: -40,
   },
   buttonText: {
     color: '#fff',

@@ -1,14 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import CreateForm from './CreateForm';
 import {View, Text, StyleSheet} from 'react-native';
 
-const CreateProject = () => {
+const CreateProject = ({projects, setProjects}) => {
   const [proj, setProj] = useState({});
+
+  useEffect(() => {
+    setProjects([...projects, proj]);
+  }, [proj]);
+
   return (
     <View style={styles.container}>
       <Header title="New Project" />
-      <CreateForm setTask={proj} task={setProj} />
+      <CreateForm proj={proj} setProj={setProj} />
     </View>
   );
 };

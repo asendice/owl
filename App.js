@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {NativeRouter, Route} from 'react-router-native';
 import Home from './components/Home';
 import CreateProject from './components/CreateProject';
@@ -14,11 +14,18 @@ import {
 } from 'react-native';
 
 const App = () => {
+  const [projects, setProjects] = useState([]);
+
   return (
     <NativeRouter>
       <SafeAreaView style={styles.container}>
-        <Route exact path="/" component={Home} />
-        <Route path="/newtask" component={CreateProject} />
+        <Route exact path="/" render={() => <Home projects={projects} />} />
+        <Route
+          path="/createproject"
+          render={() => (
+            <CreateProject projects={projects} setProjects={setProjects} />
+          )}
+        />
         <Navigation />
       </SafeAreaView>
     </NativeRouter>

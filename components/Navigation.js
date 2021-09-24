@@ -11,7 +11,7 @@ const Navigation = () => {
           <Icon name="home" size={24} color="#00c7be" />
         </View>
       </Link>
-      <Link to="/newtask">
+      <Link to="/createproject">
         <View style={styles.navIcons}>
           <Icon name="home" size={24} color="#00c7be" />
         </View>
