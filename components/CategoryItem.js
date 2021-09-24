@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: 10,
     padding: 10,
-    width: 80,
+    minWidth: 60,
     backgroundColor: '#333',
     alignItems: 'center',
     marginRight: 10,

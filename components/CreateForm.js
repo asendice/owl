@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
+import CategoryModal from './CategoryModal';
 import DatePicker from 'react-native-date-picker';
 import {readDate, readTime} from '../utils/auth';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
@@ -11,18 +12,19 @@ import {
   Text,
   TextInput,
   StyleSheet,
-  Alert,
   FlatList,
 } from 'react-native';
 
 const CreateForm = () => {
   const [open, setOpen] = useState(false);
   const [openTime, setOpenTime] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [time, setTime] = useState(new Date());
   const [date, setDate] = useState(new Date());
   const [selectedCategory, setSelectedCategory] = useState('');
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
+  const [categoryName, setCategoryName] = useState('');
   const [categories, setCategories] = useState([
     {
       id: 0,
@@ -40,13 +42,11 @@ const CreateForm = () => {
 
   const onCreateTaskPress = () => {
     console.log(title, 'title');
-    console.log(date.toString(), 'date');
-    console.log(time.toString(), 'time');
+    console.log(readDate(date), 'date');
+    console.log(readTime(time), 'time');
     console.log(desc, 'desc');
     console.log(selectedCategory, 'selectedCategory');
   };
-
-  console.log(time.toString(), 'time');
 
   const renderCategories = ({item}) => (
     <CategoryItem
@@ -56,6 +56,10 @@ const CreateForm = () => {
     />
   );
 
+  const onPlusPress = () => {
+    setOpenModal(true);
+    setCategoryName('');
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>
@@ -147,7 +151,9 @@ const CreateForm = () => {
             renderItem={renderCategories}
             horizontal={true}
           />
-          <TouchableOpacity style={styles.iconContainer}>
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => onPlusPress()}>
             <Icon name="plus" size={24} color="#fff" />
           </TouchableOpacity>
         </View>
@@ -157,6 +163,14 @@ const CreateForm = () => {
         onPress={() => onCreateTaskPress()}>
         <Text style={styles.buttonText}>CREATE TASK</Text>
       </TouchableOpacity>
+      <CategoryModal
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        categories={categories}
+        setCategories={setCategories}
+        setCategoryName={setCategoryName}
+        categoryName={categoryName}
+      />
     </SafeAreaView>
   );
 };
@@ -228,7 +242,6 @@ const styles = StyleSheet.create({
     width: 40,
     borderRadius: 100,
   },
-
 });
 
 export default CreateForm;

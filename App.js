@@ -1,4 +1,6 @@
 import React from 'react';
+import {NativeRouter, Route} from 'react-router-native';
+import Home from './components/Home';
 import CreateTask from './components/CreateTask';
 import Navigation from './components/Navigation';
 import {
@@ -13,10 +15,13 @@ import {
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <CreateTask />
-      <Navigation />
-    </View>
+    <NativeRouter>
+      <SafeAreaView style={styles.container}>
+        <Route exact path="/" component={Home} />
+        <Route path="/newtask" component={CreateTask} />
+        <Navigation />
+      </SafeAreaView>
+    </NativeRouter>
   );
 };
 
