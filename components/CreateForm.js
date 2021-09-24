@@ -181,6 +181,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'center',
     justifyContent: 'space-evenly',
+
   },
   titleContainer: {
     padding: 7,
@@ -189,6 +190,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#d3d3d3',
     borderRadius: 10,
+    marginTop: -40
   },
   inputContainer: {
     flexDirection: 'row',
@@ -228,6 +230,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: '#00c7be',
     height: 40,
+    marginTop: -40
   },
   buttonText: {
     color: '#fff',
