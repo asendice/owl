@@ -1,28 +1,34 @@
 import React from 'react';
-import {SafeAreaView, Text, StyleSheet, FlatList} from 'react-native';
+import ProjectItem from './ProjectItem';
+import {SafeAreaView, View, Text, StyleSheet, FlatList} from 'react-native';
 
-const HomeProjects = ({ title, projects }) => {
-
+const HomeProjects = ({projects}) => {
   console.log(projects, "projects")
+  const renderProjects = ({item}) => <ProjectItem project={item} />;
 
   return (
     <SafeAreaView style={styles.projects}>
       <Text style={styles.header}>Projects</Text>
-      <FlatList />
+      <View style={styles.flatList}>
+      <FlatList data={projects} renderItem={renderProjects}  horizontal={true}/>
+
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   projects: {
-    height: 60,
-    justifyContent: "center",
     marginTop: 20,
   },
   header: {
     fontSize: 18,
     marginLeft: 20,
-    fontWeight: "500"
+    fontWeight: '500',
+  },
+  flatList: {
+    padding: 10,
+    height: 180,
   }
 });
 

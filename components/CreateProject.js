@@ -7,7 +7,9 @@ const CreateProject = ({projects, setProjects}) => {
   const [proj, setProj] = useState({});
 
   useEffect(() => {
-    setProjects([...projects, proj]);
+    if (proj.title) {
+      setProjects([...projects, proj]);
+    }
   }, [proj]);
 
   return (
