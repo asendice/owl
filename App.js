@@ -1,7 +1,7 @@
 import React from 'react';
 import {NativeRouter, Route} from 'react-router-native';
 import Home from './components/Home';
-import CreateTask from './components/CreateTask';
+import CreateProject from './components/CreateProject';
 import Navigation from './components/Navigation';
 import {
   SafeAreaView,
@@ -18,7 +18,7 @@ const App = () => {
     <NativeRouter>
       <SafeAreaView style={styles.container}>
         <Route exact path="/" component={Home} />
-        <Route path="/newtask" component={CreateTask} />
+        <Route path="/newtask" component={CreateProject} />
         <Navigation />
       </SafeAreaView>
     </NativeRouter>

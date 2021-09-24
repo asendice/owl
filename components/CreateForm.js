@@ -40,7 +40,7 @@ const CreateForm = () => {
     },
   ]);
 
-  const onCreateTaskPress = () => {
+  const onCreateProjPress = () => {
     console.log(title, 'title');
     console.log(readDate(date), 'date');
     console.log(readTime(time), 'time');
@@ -67,7 +67,7 @@ const CreateForm = () => {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.titleInput}
-            placeholder="Title of this Task"
+            placeholder="Your Project's Title"
             onChangeText={setTitle}
             value={title}
           />
@@ -133,11 +133,11 @@ const CreateForm = () => {
           </View>
         </View>
       </View>
-      <View style={styles.desctiptionContainer}>
-        <Text style={styles.header}>Description</Text>
+      <View style={styles.descriptionContainer}>
+        <Text style={styles.header}>Goal</Text>
         <TextInput
-          style={styles.input}
-          placeholder="Description of this Task"
+          style={[styles.input, {height: 30}]}
+          placeholder="Goal of this Project"
           onChangeText={setDesc}
           multiline
           maxLength={100}
@@ -160,8 +160,8 @@ const CreateForm = () => {
       </View>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => onCreateTaskPress()}>
-        <Text style={styles.buttonText}>CREATE TASK</Text>
+        onPress={() => onCreateProjPress()}>
+        <Text style={styles.buttonText}>CREATE PROJECT</Text>
       </TouchableOpacity>
       <CategoryModal
         openModal={openModal}
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   titleContainer: {
-    padding: 10,
+    padding: 7,
     width: '100%',
     alignSelf: 'center',
     borderWidth: 1,
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   dateContainer: {
-    width: 180,
+    width: 150,
     borderBottomWidth: 1,
     borderBottomColor: '#d3d3d3',
   },
@@ -213,6 +213,12 @@ const styles = StyleSheet.create({
   },
   header: {
     marginBottom: 10,
+  },
+  descriptionContainer: {
+    borderBottomWidth: 1,
+    borderColor: '#d3d3d3',
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   button: {
     alignItems: 'center',

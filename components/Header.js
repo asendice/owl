@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   header: {
     height: 60,
     justifyContent: "center",
-    marginTop: 80,
+    marginTop: 20,
   },
   text: {
     fontSize: 24,

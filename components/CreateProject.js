@@ -3,12 +3,12 @@ import Header from './Header';
 import CreateForm from './CreateForm';
 import {View, Text, StyleSheet} from 'react-native';
 
-const CreateTask = () => {
-  const [task, setTask] = useState({});
+const CreateProject = () => {
+  const [proj, setProj] = useState({});
   return (
     <View style={styles.container}>
-      <Header title="New Task" />
-      <CreateForm setTask={setTask} task={task} />
+      <Header title="New Project" />
+      <CreateForm setTask={proj} task={setProj} />
     </View>
   );
 };
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateTask;
+export default CreateProject;
