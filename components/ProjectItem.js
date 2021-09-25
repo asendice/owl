@@ -1,21 +1,26 @@
 import React from 'react';
+import {Link} from 'react-router-native';
+
 import {View, Text, StyleSheet} from 'react-native';
 
-const ProjectItem = ({project}) => {
-  console.log(project.category.categoryColor, 'project');
+const ProjectItem = ({project, setSelectedProject}) => {
+  console.log('AM I RENDERUNBG SD? S');
   return (
-    <View
-      style={
-        ([styles.container,
-        {
-          backgroundColor: project.category.categoryColor,
-        }])
-      }>
-      <Text style={styles.text}>5 Tasks</Text>
-      <Text style={styles.title}>{project.title}</Text>
-      <Text style={styles.text}>{project.date}</Text>
-      <Text></Text>
-    </View>
+    <Link to="/project" onPress={() => setSelectedProject(project)}>
+      <View
+        style={[
+          styles.container,
+          {
+            backgroundColor: project.category.categoryColor
+              ? project.category.categoryColor
+              : '#333',
+          },
+        ]}>
+        <Text style={styles.text}>5 Tasks</Text>
+        <Text style={styles.title}>{project.title}</Text>
+        <Text style={styles.text}>{project.date}</Text>
+      </View>
+    </Link>
   );
 };
 
