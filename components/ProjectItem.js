@@ -2,8 +2,15 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 const ProjectItem = ({project}) => {
+  console.log(project.category.categoryColor, 'project');
   return (
-    <View style={styles.container}>
+    <View
+      style={
+        ([styles.container,
+        {
+          backgroundColor: project.category.categoryColor,
+        }])
+      }>
       <Text style={styles.text}>5 Tasks</Text>
       <Text style={styles.title}>{project.title}</Text>
       <Text style={styles.text}>{project.date}</Text>

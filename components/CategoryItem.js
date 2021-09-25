@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-const CategoryItem = ({name, setSelectedCategory, selectedCategory}) => {
+const CategoryItem = ({category, setSelectedCategory, selectedCategory}) => {
   const onItemPress = () => {
-    if (selectedCategory === name) {
-      setSelectedCategory('');
+    if (selectedCategory === category) {
+      setSelectedCategory({});
     } else {
-      setSelectedCategory(name);
+      setSelectedCategory(category);
     }
   };
 
@@ -14,10 +14,14 @@ const CategoryItem = ({name, setSelectedCategory, selectedCategory}) => {
     <TouchableOpacity
       style={[
         styles.container,
-        {backgroundColor: `${selectedCategory === name ? '#00c7be' : '#333'}`},
+        {
+          backgroundColor: `${
+            selectedCategory.name === category.name ? category.categoryColor : '#333'
+          }`,
+        },
       ]}
       onPress={() => onItemPress()}>
-      <Text style={styles.text}>{name}</Text>
+      <Text style={styles.text}>{category.name}</Text>
     </TouchableOpacity>
   );
 };

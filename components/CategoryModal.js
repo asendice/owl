@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {
@@ -17,12 +17,16 @@ const CategoryModal = ({
   categoryName,
   setCategoryName,
 }) => {
+  const [color, setColor] = useState('');
+  
+
   const onConfirmPress = () => {
     setCategories([
       ...categories,
       {
         id: Math.random(),
         name: categoryName,
+        categoryColor: color,
       },
     ]);
     setOpenModal(false);
@@ -44,6 +48,53 @@ const CategoryModal = ({
             placeholder="Category Name"
             onChangeText={setCategoryName}
           />
+          <View style={styles.colorContainer}>
+            <TouchableOpacity
+              onPress={() => setColor('#f58b00')}
+              style={[
+                styles.colorOption,
+                {
+                  backgroundColor: '#f58b00',
+                  borderWidth: color === '#f58b00' ? 2 : 1,
+                },
+              ]}></TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setColor('#1ec337')}
+              style={[
+                styles.colorOption,
+                {
+                  backgroundColor: '#1ec337',
+                  borderWidth: color === '#1ec337' ? 2 : 1,
+                },
+              ]}></TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setColor('#00bdb4')}
+              style={[
+                styles.colorOption,
+                {
+                  backgroundColor: '#00bdb4',
+                  borderWidth: color === '#00bdb4' ? 2 : 1,
+                },
+              ]}></TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setColor('#41b0dc')}
+              style={[
+                styles.colorOption,
+                {
+                  backgroundColor: '#41b0dc',
+                  borderWidth: color === '#41b0dc' ? 2 : 1,
+                },
+              ]}></TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setColor('#9f4bc9')}
+              style={[
+                styles.colorOption,
+                {
+                  backgroundColor: '#9f4bc9',
+                  borderWidth: color === '#9f4bc9' ? 2 : 1,
+                },
+              ]}></TouchableOpacity>
+          </View>
           <TouchableOpacity
             style={styles.confirmButton}
             onPress={() => onConfirmPress()}
@@ -66,8 +117,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   modalView: {
-    height: 150,
-    width: 300,
+    height: 200,
+    width: 350,
     backgroundColor: '#fff',
     borderRadius: 20,
     alignItems: 'center',
@@ -88,8 +139,19 @@ const styles = StyleSheet.create({
   },
   closeModal: {
     alignSelf: 'flex-end',
-    marginRight: 10
-  }
+    marginRight: 10,
+  },
+  colorContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  colorOption: {
+    borderRadius: 100,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#333',
+    margin: 3,
+  },
 });
 
 export default CategoryModal;

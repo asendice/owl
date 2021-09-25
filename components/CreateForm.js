@@ -21,7 +21,7 @@ const CreateForm = ({setProj}) => {
   const [openModal, setOpenModal] = useState(false);
   const [time, setTime] = useState(new Date());
   const [date, setDate] = useState(new Date());
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState({});
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
   const [categoryName, setCategoryName] = useState('');
@@ -29,14 +29,17 @@ const CreateForm = ({setProj}) => {
     {
       id: 0,
       name: 'Work',
+      categoryColor: '#2EA7BD',
     },
     {
       id: 1,
       name: 'Home',
+      categoryColor: '#F58B00',
     },
     {
       id: 2,
       name: 'Health',
+      categoryColor: '#1ec337',
     },
   ]);
 
@@ -69,7 +72,7 @@ const CreateForm = ({setProj}) => {
   const renderCategories = ({item}) => (
     <CategoryItem
       setSelectedCategory={setSelectedCategory}
-      name={item.name}
+      category={item}
       selectedCategory={selectedCategory}
     />
   );

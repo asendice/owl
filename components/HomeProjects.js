@@ -3,7 +3,6 @@ import ProjectItem from './ProjectItem';
 import {SafeAreaView, View, Text, StyleSheet, FlatList} from 'react-native';
 
 const HomeProjects = ({projects}) => {
-  console.log(projects, "projects")
   const renderProjects = ({item}) => <ProjectItem project={item} />;
 
   return (
