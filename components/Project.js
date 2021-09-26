@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../components/Header';
 import ProjectTasks from '../components/ProjectTasks';
 import {SafeAreaView, View, Text, TextInput, StyleSheet} from 'react-native';
 
 const Project = ({selectedProject}) => {
-  console.log(selectedProject, 'selectedProject');
+  const [tasks, setTasks] = useState([]);
+
+
   return (
     <SafeAreaView style={styles.container}>
       <Header title={selectedProject.title} />
       <Text style={styles.goal}>"{selectedProject.desc}"</Text>
-      <ProjectTasks color={selectedProject.category.categoryColor} />
+      <ProjectTasks color={selectedProject.category.categoryColor} tasks={tasks} setTasks={setTasks} />
     </SafeAreaView>
   );
 };

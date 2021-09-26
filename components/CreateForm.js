@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
 import CategoryModal from './CategoryModal';
 import DatePicker from 'react-native-date-picker';
-// import {readDate, readTime} from '../utils/auth';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {

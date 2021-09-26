@@ -4,7 +4,6 @@ import {Link} from 'react-router-native';
 import {View, Text, StyleSheet} from 'react-native';
 
 const ProjectItem = ({project, setSelectedProject}) => {
-  console.log('AM I RENDERUNBG SD? S');
   return (
     <Link to="/project" onPress={() => setSelectedProject(project)}>
       <View
