@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
 import CategoryModal from './CategoryModal';
 import DatePicker from 'react-native-date-picker';
-import {Redirect} from 'react-router-native';
+
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {
@@ -42,11 +42,6 @@ const CreateForm = ({setProj, proj}) => {
       categoryColor: '#1ec337',
     },
   ]);
-  const [finished, setFinished] = useState(false);
-
-  useEffect(() => {
-    finished ? <Redirect to="/" /> : '';
-  }, [proj]);
 
   const readDate = str => {
     let newDate = str.toString().slice(4, 15);
@@ -72,7 +67,6 @@ const CreateForm = ({setProj, proj}) => {
       category: selectedCategory,
     };
     setProj(obj);
-    setFinished(true);
   };
 
   const renderCategories = ({item}) => (
