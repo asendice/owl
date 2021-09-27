@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import DatePicker from 'react-native-date-picker';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {

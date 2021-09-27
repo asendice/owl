@@ -18,7 +18,6 @@ const CategoryModal = ({
   setCategoryName,
 }) => {
   const [color, setColor] = useState('');
-  
 
   const onConfirmPress = () => {
     setCategories([
@@ -43,8 +42,8 @@ const CategoryModal = ({
             style={styles.closeModal}
             onPress={() => setOpenModal(false)}
           />
-          <Text style={styles.modalText}>Create Category</Text>
           <TextInput
+            style={styles.modalInput}
             placeholder="Category Name"
             onChangeText={setCategoryName}
           />
@@ -55,7 +54,7 @@ const CategoryModal = ({
                 styles.colorOption,
                 {
                   backgroundColor: '#f58b00',
-                  borderWidth: color === '#f58b00' ? 2 : 1,
+                  borderColor: color === '#f58b00' ? "#333" : "#fff",
                 },
               ]}></TouchableOpacity>
             <TouchableOpacity
@@ -64,7 +63,7 @@ const CategoryModal = ({
                 styles.colorOption,
                 {
                   backgroundColor: '#1ec337',
-                  borderWidth: color === '#1ec337' ? 2 : 1,
+                  borderColor: color === '#1ec337' ? "#333" : "#fff",
                 },
               ]}></TouchableOpacity>
             <TouchableOpacity
@@ -73,7 +72,7 @@ const CategoryModal = ({
                 styles.colorOption,
                 {
                   backgroundColor: '#00bdb4',
-                  borderWidth: color === '#00bdb4' ? 2 : 1,
+                  borderColor: color === '#00bdb4' ? "#333" : "#fff",
                 },
               ]}></TouchableOpacity>
             <TouchableOpacity
@@ -82,7 +81,7 @@ const CategoryModal = ({
                 styles.colorOption,
                 {
                   backgroundColor: '#41b0dc',
-                  borderWidth: color === '#41b0dc' ? 2 : 1,
+                  borderColor: color === '#41b0dc' ? "#333" : "#fff",
                 },
               ]}></TouchableOpacity>
             <TouchableOpacity
@@ -91,7 +90,7 @@ const CategoryModal = ({
                 styles.colorOption,
                 {
                   backgroundColor: '#9f4bc9',
-                  borderWidth: color === '#9f4bc9' ? 2 : 1,
+                  borderColor: color === '#9f4bc9' ? "#333" : "#fff",
                 },
               ]}></TouchableOpacity>
           </View>
@@ -99,7 +98,7 @@ const CategoryModal = ({
             style={styles.confirmButton}
             onPress={() => onConfirmPress()}
             disabled={categoryName.length > 0 ? false : true}>
-            <Text style={{color: '#fff'}}>Confirm</Text>
+            <Text style={styles.buttonText}>CREATE CATEGORY</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -113,7 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  modalText: {
+  modalInput: {
     fontSize: 24,
   },
   modalView: {
@@ -136,6 +135,12 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#00c7be',
     borderRadius: 20,
+    width: '90%',
+  },
+  buttonText: {
+    color: '#fff',
+    alignSelf: 'center',
+    fontWeight: '600',
   },
   closeModal: {
     alignSelf: 'flex-end',
@@ -149,7 +154,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     padding: 20,
     borderWidth: 1,
-    borderColor: '#333',
+    borderColor: '#fff',
     margin: 3,
   },
 });

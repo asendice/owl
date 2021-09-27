@@ -15,7 +15,7 @@ const CreateProject = ({projects, setProjects}) => {
   return (
     <View style={styles.container}>
       <Header title="New Project" />
-      <CreateForm proj={proj} setProj={setProj} />
+      <CreateForm setProj={setProj} />
     </View>
   );
 };

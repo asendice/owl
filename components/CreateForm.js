@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import CategoryItem from './CategoryItem';
 import CategoryModal from './CategoryModal';
 import DatePicker from 'react-native-date-picker';
+import {Redirect} from 'react-router-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {
@@ -14,7 +15,7 @@ import {
   FlatList,
 } from 'react-native';
 
-const CreateForm = ({setProj}) => {
+const CreateForm = ({setProj, proj}) => {
   const [open, setOpen] = useState(false);
   const [openTime, setOpenTime] = useState(false);
   const [openModal, setOpenModal] = useState(false);
@@ -41,6 +42,11 @@ const CreateForm = ({setProj}) => {
       categoryColor: '#1ec337',
     },
   ]);
+  const [finished, setFinished] = useState(false);
+
+  useEffect(() => {
+    finished ? <Redirect to="/" /> : '';
+  }, [proj]);
 
   const readDate = str => {
     let newDate = str.toString().slice(4, 15);
@@ -66,6 +72,7 @@ const CreateForm = ({setProj}) => {
       category: selectedCategory,
     };
     setProj(obj);
+    setFinished(true);
   };
 
   const renderCategories = ({item}) => (
