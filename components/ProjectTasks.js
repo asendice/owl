@@ -6,11 +6,9 @@ import {SwipeListView} from 'react-native-swipe-list-view';
 import TaskModal from './TaskModal';
 import TaskItem from './TaskItem';
 
-const ProjectTasks = ({color, tasks, setTasks}) => {
+const ProjectTasks = ({projId, projectTasks, color, tasks, setTasks}) => {
   const [task, setTask] = useState({});
   const [openModal, setOpenModal] = useState(false);
-
-  console.log(tasks, 'tasks');
 
   useEffect(() => {
     if (task.name) {
@@ -60,6 +58,7 @@ const ProjectTasks = ({color, tasks, setTasks}) => {
         setOpenModal={setOpenModal}
         color={color}
         setTask={setTask}
+        projId={projId}
       />
     </View>
   );
@@ -122,9 +121,9 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 2,
-    fontWeight: "600",
-    color: "green"
-  }
+    fontWeight: '600',
+    color: 'green',
+  },
 });
 
 export default ProjectTasks;

@@ -10,7 +10,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-const TaskModal = ({openModal, setOpenModal, color, setTask}) => {
+const TaskModal = ({openModal, setOpenModal, color, setTask, projId}) => {
   const [name, setName] = useState('');
   const [priority, setPriority] = useState('High');
 
@@ -21,6 +21,7 @@ const TaskModal = ({openModal, setOpenModal, color, setTask}) => {
         priority: priority,
         complete: false,
         inProgress: false,
+        projId: projId,
       });
       setOpenModal(false);
     }

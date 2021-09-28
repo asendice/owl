@@ -15,7 +15,7 @@ const ProjectItem = ({project, setSelectedProject}) => {
               : '#333',
           },
         ]}>
-        <Text style={styles.text}>5 Tasks</Text>
+        <Text style={styles.text}>{project.tasks.length} Tasks</Text>
         <Text style={styles.title}>{project.title}</Text>
         <Text style={styles.text}>{project.date}</Text>
       </View>

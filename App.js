@@ -18,6 +18,15 @@ const App = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState({});
 
+  console.log(projects, 'projects');
+
+  const addTasks = tasks => {
+    const project = projects.filter(proj => proj.id === tasks[0].projId);
+    const otherProjects = projects.filter(proj => proj.id != tasks[0].projId);
+    project[0].tasks = tasks;
+    setProjects([...otherProjects, project[0]]);
+  };
+
   return (
     <NativeRouter>
       <SafeAreaView style={styles.container}>
@@ -36,7 +45,9 @@ const App = () => {
         />
         <Route
           path="/project"
-          render={() => <Project selectedProject={selectedProject} />}
+          render={() => (
+            <Project projects={projects} selectedProject={selectedProject} addTasks={addTasks} />
+          )}
         />
         <Navigation />
       </SafeAreaView>

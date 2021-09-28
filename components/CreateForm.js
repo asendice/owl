@@ -60,11 +60,13 @@ const CreateForm = ({setProj, proj}) => {
 
   const onCreateProjPress = () => {
     let obj = {
+      id: Math.random(),
       title: title,
       date: readDate(date),
       time: readDate(time),
       desc: desc,
       category: selectedCategory,
+      tasks: [],
     };
     setProj(obj);
   };
