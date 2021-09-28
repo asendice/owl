@@ -4,10 +4,9 @@ import {SafeAreaView, View, Text} from 'react-native';
 import HomeProjects from './HomeProjects';
 
 const Home = ({projects, setSelectedProject}) => {
-  console.log(projects, "projects")
   return (
     <SafeAreaView>
-      <Header title="Welcome, Steve Yeun " />
+      <Header title="Owl " />
       <HomeProjects projects={projects} setSelectedProject={setSelectedProject}/>
     </SafeAreaView>
   );

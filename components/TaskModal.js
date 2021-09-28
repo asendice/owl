@@ -19,6 +19,8 @@ const TaskModal = ({openModal, setOpenModal, color, setTask}) => {
       setTask({
         name: name,
         priority: priority,
+        complete: false,
+        inProgress: false,
       });
       setOpenModal(false);
     }
@@ -47,17 +49,26 @@ const TaskModal = ({openModal, setOpenModal, color, setTask}) => {
             <View style={styles.priorityContainer}>
               <TouchableOpacity
                 onPress={() => setPriority('High')}
-                style={[styles.iconContainer, {}]}>
+                style={[
+                  styles.iconContainer,
+                  {borderColor: priority === 'High' ? '#333' : '#d3d3d3'},
+                ]}>
                 <Icon style={styles.icon} name="flag" color="#ff3126" />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => setPriority('Medium')}
-                style={styles.iconContainer}>
+                style={[
+                  styles.iconContainer,
+                  {borderColor: priority === 'Medium' ? '#333' : '#d3d3d3'},
+                ]}>
                 <Icon style={styles.icon} name="flag" color="#f5c400" />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => setPriority('Low')}
-                style={styles.iconContainer}>
+                style={[
+                  styles.iconContainer,
+                  {borderColor: priority === 'Low' ? '#333' : '#d3d3d3'},
+                ]}>
                 <Icon style={styles.icon} name="flag" color="#1ec337" />
               </TouchableOpacity>
             </View>
@@ -65,7 +76,10 @@ const TaskModal = ({openModal, setOpenModal, color, setTask}) => {
           {/* End of Priority Container  */}
           <TouchableOpacity
             onPress={() => createTask()}
-            style={[styles.createButton, {backgroundColor: color ? color : "#333"}]}>
+            style={[
+              styles.createButton,
+              {backgroundColor: color ? color : '#333'},
+            ]}>
             <Text style={styles.buttonText}>CREATE TASK</Text>
           </TouchableOpacity>
         </View>
