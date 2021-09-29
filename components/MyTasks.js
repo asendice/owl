@@ -3,7 +3,10 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {View, Text, StyleSheet} from 'react-native';
 
-const MyTasks = () => {
+const MyTasks = ({tasks}) => {
+  const highPrio = tasks.filter(task => task.priority === 'High');
+  const progress = tasks.filter(task => task.inProgress === true);
+  const completed = tasks.filter(task => task.completed === true);
   return (
     <View style={styles.MyTasks}>
       <Text style={styles.header}>My Tasks</Text>
@@ -14,7 +17,9 @@ const MyTasks = () => {
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.taskHeader}>To Do</Text>
-            <Text style={styles.text}>Makes Sense now</Text>
+            <Text style={styles.text}>
+              {tasks.length} tasks - {highPrio.length} high priority
+            </Text>
           </View>
         </View>
       </View>
@@ -25,7 +30,7 @@ const MyTasks = () => {
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.taskHeader}>In Progress</Text>
-            <Text style={styles.text}>Makes Sense now</Text>
+            <Text style={styles.text}>{progress.length} tasks in progress</Text>
           </View>
         </View>
       </View>
@@ -36,7 +41,7 @@ const MyTasks = () => {
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.taskHeader}>Done</Text>
-            <Text style={styles.text}>Makes Sense now</Text>
+            <Text style={styles.text}>{completed.length} tasks completed</Text>
           </View>
         </View>
       </View>
@@ -77,8 +82,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   text: {
-    color: "grey"
-  }
+    color: 'grey',
+  },
 });
 
 export default MyTasks;

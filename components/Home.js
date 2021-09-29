@@ -5,6 +5,10 @@ import HomeProjects from './HomeProjects';
 import MyTasks from './MyTasks';
 
 const Home = ({projects, setSelectedProject}) => {
+  const arrOfTasks = projects.map(proj => {
+    return proj.tasks;
+  });
+
   return (
     <SafeAreaView>
       <Header title="Owl " />
@@ -12,7 +16,7 @@ const Home = ({projects, setSelectedProject}) => {
         projects={projects}
         setSelectedProject={setSelectedProject}
       />
-      <MyTasks />
+      <MyTasks tasks={arrOfTasks.flat()} />
     </SafeAreaView>
   );
 };
