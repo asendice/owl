@@ -3,15 +3,11 @@ import Header from '../components/Header';
 import ProjectTasks from '../components/ProjectTasks';
 import {SafeAreaView, View, Text, TextInput, StyleSheet} from 'react-native';
 
-const Project = ({selectedProject, addTasks, projects}) => {
-  const [tasks, setTasks] = useState([]);
+const Project = ({selectedProject, addTasks}) => {
+  const [tasks, setTasks] = useState(selectedProject.tasks);
 
   useEffect(() => {
-    if (tasks.length > 0) {
-      addTasks(tasks);
-    } else {
-      return null;
-    }
+    addTasks(tasks, selectedProject.id);
   }, [tasks]);
 
   return (

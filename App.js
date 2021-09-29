@@ -18,11 +18,10 @@ const App = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState({});
 
-  console.log(projects, 'projects');
-
-  const addTasks = tasks => {
-    const project = projects.filter(proj => proj.id === tasks[0].projId);
-    const otherProjects = projects.filter(proj => proj.id != tasks[0].projId);
+  const addTasks = (tasks, id) => {
+    const project = projects.filter(proj => proj.id === id);
+    const otherProjects = projects.filter(proj => proj.id != id);
+    console.log(project)
     project[0].tasks = tasks;
     setProjects([...otherProjects, project[0]]);
   };
@@ -46,7 +45,11 @@ const App = () => {
         <Route
           path="/project"
           render={() => (
-            <Project projects={projects} selectedProject={selectedProject} addTasks={addTasks} />
+            <Project
+              projects={projects}
+              selectedProject={selectedProject}
+              addTasks={addTasks}
+            />
           )}
         />
         <Navigation />

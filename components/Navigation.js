@@ -8,21 +8,16 @@ const Navigation = () => {
     <View style={styles.navigation}>
       <Link to="/">
         <View style={styles.navIcons}>
-          <Icon name="home" size={24} color="#00c7be" />
+          <Icon name="home" size={24} color="#333" />
+          <Text style={styles.text}>Home</Text>
         </View>
       </Link>
       <Link to="/createproject">
         <View style={styles.navIcons}>
-          <Icon name="home" size={24} color="#00c7be" />
+          <Icon name="folder" size={24} color="#333" />
+          <Text style={styles.text}>Create Project</Text>
         </View>
       </Link>
-
-      <View style={styles.navIcons}>
-        <Icon name="home" size={24} color="#00c7be" />
-      </View>
-      <View style={styles.navIcons}>
-        <Icon name="home" size={24} color="#00c7be" />
-      </View>
     </View>
   );
 };
@@ -41,8 +36,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
   },
   navIcons: {
-    padding: 20,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "#00c7be",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center"
   },
+  text: {
+    color: "#333",
+    fontSize: 17,
+    fontWeight: "600",
+  }
 });
 
 export default Navigation;

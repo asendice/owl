@@ -17,6 +17,7 @@ const TaskModal = ({openModal, setOpenModal, color, setTask, projId}) => {
   const createTask = () => {
     if (name.length > 0) {
       setTask({
+        id: Math.random(),
         name: name,
         priority: priority,
         complete: false,

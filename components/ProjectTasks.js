@@ -16,16 +16,27 @@ const ProjectTasks = ({projId, projectTasks, color, tasks, setTasks}) => {
     }
   }, [task]);
 
+  const onDeleteTask = id => {
+    const deleted = tasks.filter(task => id != task.id);
+    setTasks(deleted);
+  };
+
   const renderTasks = ({item}) => <TaskItem task={item} setTasks={setTasks} />;
-  const renderHiddenOptions = ({items}) => {
+  const renderHiddenOptions = ({item}) => {
     return (
       <View style={styles.hiddenContainer}>
-        <TouchableOpacity style={styles.deleteOption}>
+        <TouchableOpacity
+          onPress={() => onDeleteTask(item.id)}
+          style={styles.deleteOption}>
           <Text style={styles.optionText}>Delete</Text>
         </TouchableOpacity>
-        <View style={[styles.options, {backgroundColor: color}]}>
-          <TouchableOpacity style={styles.iconContainer}>
-            <Icon name="done" style={styles.icon} />
+        <View style={styles.optionsContainer}>
+          <TouchableOpacity
+            style={[styles.options, {backgroundColor: '#f58b00'}]}>
+            <Text style={styles.optionText}>In Progress</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.options, {backgroundColor: color}]}>
+            <Text style={styles.optionText}>Complete</Text>
           </TouchableOpacity>
           <Icon />
           <Icon />
@@ -48,8 +59,8 @@ const ProjectTasks = ({projId, projectTasks, color, tasks, setTasks}) => {
         <SwipeListView
           data={tasks}
           renderItem={renderTasks}
-          leftOpenValue={75}
-          rightOpenValue={-165}
+          leftOpenValue={110}
+          rightOpenValue={-210}
           renderHiddenItem={renderHiddenOptions}
         />
       </View>
@@ -89,14 +100,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  options: {
+  optionsContainer: {
     flex: 2,
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 15,
     height: 60,
     borderRadius: 10,
+  },
+  options: {
+    flex: 1,
+    height: 60,
+    borderRadius: 10,
+    backgroundColor: 'pink',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   deleteOption: {
     flex: 1,
@@ -111,18 +129,6 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 18,
     color: '#fff',
-  },
-  iconContainer: {
-    padding: 15,
-    fontSize: 18,
-    borderWidth: 1,
-    borderColor: 'green',
-    borderRadius: 100,
-  },
-  icon: {
-    fontSize: 2,
-    fontWeight: '600',
-    color: 'green',
   },
 });
 
