@@ -6,7 +6,7 @@ import {View, Text, StyleSheet} from 'react-native';
 const MyTasks = ({tasks}) => {
   const highPrio = tasks.filter(task => task.priority === 'High');
   const progress = tasks.filter(task => task.inProgress === true);
-  const completed = tasks.filter(task => task.completed === true);
+  const completed = tasks.filter(task => task.complete === true);
   return (
     <View style={styles.MyTasks}>
       <Text style={styles.header}>My Tasks</Text>

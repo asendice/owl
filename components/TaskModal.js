@@ -23,6 +23,7 @@ const TaskModal = ({openModal, setOpenModal, color, setTask, projId}) => {
         complete: false,
         inProgress: false,
         projId: projId,
+        timestamp: new Date(),
       });
       setOpenModal(false);
     }
