@@ -63,10 +63,11 @@ const CreateForm = ({setProj, proj}) => {
       id: Math.random(),
       title: title,
       date: readDate(date),
-      time: readDate(time),
+      time: readTime(time),
       desc: desc,
       category: selectedCategory,
       tasks: [],
+      timeStamp: new Date(),
     };
     setProj(obj);
   };

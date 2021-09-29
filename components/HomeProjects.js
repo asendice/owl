@@ -22,7 +22,7 @@ const HomeProjects = ({projects, setSelectedProject}) => {
 
 const styles = StyleSheet.create({
   projects: {
-    marginTop: 20,
+    marginTop: 40,
   },
   header: {
     fontSize: 18,
