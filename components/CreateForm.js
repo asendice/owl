@@ -109,6 +109,7 @@ const CreateForm = ({setProj, proj}) => {
           <View style={styles.inputContainer}>
             <Text style={styles.whenText}>{readDate(date)}</Text>
             <DatePicker
+              timeZoneOffsetInMinutes={-420}
               modal
               mode="date"
               open={open}
@@ -135,6 +136,7 @@ const CreateForm = ({setProj, proj}) => {
           <View style={styles.inputContainer}>
             <Text style={styles.whenText}>{readTime(time)}</Text>
             <DatePicker
+            timeZoneOffsetInMinutes={-420}
               modal
               mode="time"
               date={time}

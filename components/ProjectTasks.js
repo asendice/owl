@@ -123,7 +123,7 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
             data={inProgress}
             renderItem={renderTasks}
             leftOpenValue={110}
-            rightOpenValue={-210}
+            rightOpenValue={-110}
             renderHiddenItem={renderHiddenOptions}
           />
         ) : (
