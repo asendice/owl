@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Header from '../components/Header';
 import ProjectTasks from '../components/ProjectTasks';
-import {SafeAreaView, View, Text, TextInput, StyleSheet} from 'react-native';
+import {SafeAreaView, ScrollView, Text, TextInput, StyleSheet} from 'react-native';
 
 const Project = ({selectedProject, addTasks}) => {
   const [tasks, setTasks] = useState(selectedProject.tasks);

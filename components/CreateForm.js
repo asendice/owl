@@ -67,7 +67,7 @@ const CreateForm = ({setProj, proj}) => {
       desc: desc,
       category: selectedCategory,
       tasks: [],
-      timeStamp: new Date(),
+      timestamp: new Date(),
     };
     setProj(obj);
   };

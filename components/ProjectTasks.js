@@ -1,16 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 Icon.loadFont();
-import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  View,
+  ScrollView,
+  Text,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import {SwipeListView} from 'react-native-swipe-list-view';
 import TaskModal from './TaskModal';
 import TaskItem from './TaskItem';
 
 const ProjectTasks = ({projId, color, tasks, setTasks}) => {
   const [task, setTask] = useState({});
+  const [status, setStatus] = useState('Untouched');
   const [openModal, setOpenModal] = useState(false);
 
-  console.log(tasks, 'Tasks fromproject tasks');
   const newTasks = tasks
     .filter(task => task.complete === false && task.inProgress === false)
     .sort((a, b) => a.timestamp - b.timestamp);
@@ -83,31 +90,45 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
           onPress={() => setOpenModal(true)}
         />
       </View>
+
+      <View style={styles.statusButtons}>
+        <TouchableOpacity
+          onPress={() => setStatus('Untouched')}
+          style={[styles.statusBtn, {backgroundColor: status === 'Untouched' ? color : "grey"}]}>
+          <Text style={styles.statusText}>Untouched</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => setStatus('In Progress')}
+          style={[styles.statusBtn, {backgroundColor: status === 'In Progress' ? color : "grey"}]}>
+          <Text>In Progress</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => setStatus('Completed')}
+          style={[styles.statusBtn, {backgroundColor: status === 'Completed' ? color : "grey"}]}>
+          <Text>Completed</Text>
+        </TouchableOpacity>
+      </View>
+
       <View style={styles.flatList}>
-        <Text>To Do's Untouched</Text>
-        <SwipeListView
-          data={newTasks}
-          renderItem={renderTasks}
-          leftOpenValue={110}
-          rightOpenValue={-210}
-          renderHiddenItem={renderHiddenOptions}
-        />
-        <Text>In Progress</Text>
-        <SwipeListView
-          data={inProgress}
-          renderItem={renderTasks}
-          leftOpenValue={110}
-          rightOpenValue={-210}
-          renderHiddenItem={renderHiddenOptions}
-        />
-        <Text>Completed Tasks</Text>
-        <SwipeListView
-          data={completed}
-          renderItem={renderTasks}
-          leftOpenValue={110}
-          rightOpenValue={-210}
-          renderHiddenItem={renderHiddenOptions}
-        />
+        {status === 'Untouched' ? (
+          <SwipeListView
+            data={newTasks}
+            renderItem={renderTasks}
+            leftOpenValue={110}
+            rightOpenValue={-210}
+            renderHiddenItem={renderHiddenOptions}
+          />
+        ) : status === 'In Progress' ? (
+          <SwipeListView
+            data={inProgress}
+            renderItem={renderTasks}
+            leftOpenValue={110}
+            rightOpenValue={-210}
+            renderHiddenItem={renderHiddenOptions}
+          />
+        ) : (
+          <FlatList data={completed} renderItem={renderTasks} />
+        )}
       </View>
       <TaskModal
         openModal={openModal}
@@ -124,6 +145,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 50,
     minHeight: 100,
+    flex: 1,
   },
   header: {
     flexDirection: 'row',
@@ -136,9 +158,25 @@ const styles = StyleSheet.create({
   addIcon: {
     fontSize: 33,
   },
+  statusButtons: {
+    marginTop: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  statusBtn: {
+    padding: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 20,
+    backgroundColor: 'grey',
+  },
+  statusText: {
+    color: '#333',
+    fontWeight: '600',
+  },
   flatList: {
     marginTop: 20,
-    height: 400,
+    height: 460
   },
   hiddenContainer: {
     flexDirection: 'row',

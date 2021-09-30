@@ -11,7 +11,7 @@ const HomeProjects = ({projects, setSelectedProject}) => {
       <Text style={styles.header}>Projects</Text>
       <View style={styles.flatList}>
         <FlatList
-          data={projects}
+          data={projects.sort((a, b) => a.timestamp - b.timestamp)}
           renderItem={renderProjects}
           horizontal={true}
         />
