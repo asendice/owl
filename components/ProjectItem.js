@@ -6,18 +6,10 @@ import {View, Text, StyleSheet} from 'react-native';
 const ProjectItem = ({project, setSelectedProject}) => {
   return (
     <Link to="/project" onPress={() => setSelectedProject(project)}>
-      <View
-        style={[
-          styles.container,
-          {
-            backgroundColor: project.category.categoryColor
-              ? project.category.categoryColor
-              : '#333',
-          },
-        ]}>
+      <View style={styles.container}>
         <Text style={styles.text}>{project.tasks.length} Tasks</Text>
-        <Text style={styles.title}>{project.title}</Text>
-        <Text style={styles.text}>{project.date}</Text>
+        <Text style={[styles.title, {color: project.category.categoryColor}]}>{project.title}</Text>
+        <Text style={styles.date}>{project.date}</Text>
       </View>
     </Link>
   );
@@ -40,8 +32,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   text: {
-    color: '#fff',
+    color: 'grey',
   },
+  date: {
+    color: "#fff",
+    fontWeight: "600"
+  }
 });
 
 export default ProjectItem;

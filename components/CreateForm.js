@@ -94,6 +94,7 @@ const CreateForm = ({setProj, proj}) => {
             placeholder="Your Project's Title"
             onChangeText={setTitle}
             value={title}
+            maxLength={35}
           />
           <Icon
             name="times"
@@ -136,7 +137,7 @@ const CreateForm = ({setProj, proj}) => {
           <View style={styles.inputContainer}>
             <Text style={styles.whenText}>{readTime(time)}</Text>
             <DatePicker
-            timeZoneOffsetInMinutes={-420}
+              timeZoneOffsetInMinutes={-420}
               modal
               mode="time"
               date={time}
@@ -165,6 +166,7 @@ const CreateForm = ({setProj, proj}) => {
           style={[styles.input, {height: 30}]}
           placeholder="Goal of your Project"
           onChangeText={setDesc}
+          blurOnSubmit={true}
           multiline
           maxLength={100}
         />

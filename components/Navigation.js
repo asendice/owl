@@ -9,13 +9,13 @@ const Navigation = () => {
       <Link to="/">
         <View style={styles.navIcons}>
           <Icon name="home" size={24} color="#333" />
-          <Text style={styles.text}>Home</Text>
+          {/* <Text style={styles.text}>Home</Text> */}
         </View>
       </Link>
       <Link to="/createproject">
         <View style={styles.navIcons}>
           <Icon name="folder" size={24} color="#333" />
-          <Text style={styles.text}>Create Project</Text>
+          {/* <Text style={styles.text}>Create Project</Text> */}
         </View>
       </Link>
     </View>

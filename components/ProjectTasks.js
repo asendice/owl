@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
   },
   flatList: {
     marginTop: 20,
-    height: 460
+    height: 420
   },
   hiddenContainer: {
     flexDirection: 'row',

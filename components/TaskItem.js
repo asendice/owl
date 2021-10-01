@@ -15,7 +15,13 @@ const TaskItem = ({task, color}) => {
 
   return (
     <View style={[styles.listItem, {backgroundColor: bkgColor}]}>
-      <Text style={styles.text}>{task.name}</Text>
+      <Text
+        style={[
+          styles.text,
+          {textDecorationLine: task.complete ? 'line-through' : 'none'},
+        ]}>
+        {task.name}
+      </Text>
       <View style={styles.iconContainer}>
         <View style={styles.flagContainer}>
           <Icon name="flag" style={styles.icon} color={prioColor} />

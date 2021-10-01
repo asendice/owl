@@ -7,9 +7,9 @@ const readTime = str => {
   let time = str.toString().slice(16, 24);
   let twelve = Number(time.slice(0, 2));
   if (twelve > 12) {
-    return twelve - 12 + ':' + time.slice(3, 5) + 'PM';
+    return twelve - 12 + ':' + time.slice(3, 5) + ' PM';
   } else {
-    return twelve + ':' + time.slice(3, 5) + 'AM';
+    return twelve + ':' + time.slice(3, 5) + ' AM';
   }
 };
 

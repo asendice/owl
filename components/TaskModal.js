@@ -25,6 +25,8 @@ const TaskModal = ({openModal, setOpenModal, color, setTask, projId}) => {
         projId: projId,
         timestamp: new Date(),
       });
+      setName('');
+      setPriority('High');
       setOpenModal(false);
     }
   };
@@ -100,6 +102,7 @@ const styles = StyleSheet.create({
   view: {
     height: 275,
     width: '90%',
+    marginTop: -200,
     justifyContent: 'space-evenly',
     backgroundColor: '#fff',
     borderRadius: 20,

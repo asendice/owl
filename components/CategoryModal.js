@@ -111,13 +111,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 100
   },
   modalInput: {
     fontSize: 24,
   },
   modalView: {
     height: 200,
-    width: 350,
+    width: "90%",
     backgroundColor: '#fff',
     borderRadius: 20,
     alignItems: 'center',
