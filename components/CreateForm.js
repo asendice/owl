@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
 import CategoryModal from './CategoryModal';
 import DatePicker from 'react-native-date-picker';
-
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {
@@ -87,7 +86,7 @@ const CreateForm = ({setProj, proj}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>
-        <Text>Title</Text>
+        <Text style={styles.header}>Title</Text>
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.titleInput}
@@ -162,14 +161,23 @@ const CreateForm = ({setProj, proj}) => {
       </View>
       <View style={styles.descriptionContainer}>
         <Text style={styles.header}>Goal</Text>
-        <TextInput
-          style={[styles.input, {height: 30}]}
-          placeholder="Goal of your Project"
-          onChangeText={setDesc}
-          blurOnSubmit={true}
-          multiline
-          maxLength={100}
-        />
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={[styles.goalInput, {height: 40}]}
+            placeholder="Goal of your Project"
+            onChangeText={setDesc}
+            value={desc}
+            blurOnSubmit={true}
+            multiline
+            maxLength={100}
+          />
+          <Icon
+            name="times"
+            size={24}
+            color="#d3d3d3"
+            onPress={() => setDesc('')}
+          />
+        </View>
       </View>
       <View style={styles.categoryContainer}>
         <Text style={styles.header}>Category</Text>
@@ -210,6 +218,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'space-evenly',
   },
+  header: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
   titleContainer: {
     padding: 7,
     width: '100%',
@@ -240,14 +252,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#d3d3d3',
   },
-  header: {
-    marginBottom: 10,
-  },
   descriptionContainer: {
-    borderBottomWidth: 1,
+    borderWidth: 1,
+    borderRadius: 10,
     borderColor: '#d3d3d3',
-    paddingTop: 10,
-    paddingBottom: 10,
+    padding: 10,
   },
   button: {
     alignItems: 'center',
@@ -277,6 +286,9 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     borderRadius: 100,
+  },
+  goalInput: {
+    width: 315,
   },
 });
 

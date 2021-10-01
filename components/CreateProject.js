@@ -15,7 +15,7 @@ const CreateProject = ({projects, setProjects}) => {
 
   return (
     <View style={styles.container}>
-      <Header title="New Project" />
+      <Header title="Create Project" />
       <CreateForm setProj={setProj} />
       {proj.title ? <Redirect to="/"/> : null}
     </View>
