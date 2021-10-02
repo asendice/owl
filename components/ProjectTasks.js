@@ -1,17 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 Icon.loadFont();
-import {
-  View,
-  ScrollView,
-  Text,
-  FlatList,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import {SwipeListView} from 'react-native-swipe-list-view';
 import TaskModal from './TaskModal';
 import TaskItem from './TaskItem';
+import NoListContent from './NoListContent';
 
 const ProjectTasks = ({projId, color, tasks, setTasks}) => {
   const [task, setTask] = useState({});
@@ -80,6 +74,41 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
     );
   };
 
+  const renderUntouched = () => {
+    if (newTasks.length > 0) {
+      return (
+        <SwipeListView
+          data={newTasks}
+          renderItem={renderTasks}
+          leftOpenValue={110}
+          rightOpenValue={-214}
+          renderHiddenItem={renderHiddenOptions}
+          friction={8}
+          tension={-2}
+        />
+      );
+    } else {
+      return <NoListContent setOpenModal={setOpenModal} />;
+    }
+  };
+  const renderInProgress = () => {
+    if (inProgress.length > 0) {
+      return (
+        <SwipeListView
+          data={inProgress}
+          renderItem={renderTasks}
+          leftOpenValue={110}
+          rightOpenValue={-110}
+          renderHiddenItem={renderHiddenOptions}
+          friction={8}
+          tension={-2}
+        />
+      );
+    } else {
+      return <NoListContent setOpenModal={setOpenModal} />;
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -94,38 +123,42 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
       <View style={styles.statusButtons}>
         <TouchableOpacity
           onPress={() => setStatus('Untouched')}
-          style={[styles.statusBtn, {backgroundColor: status === 'Untouched' ? color : "grey"}]}>
+          style={[
+            styles.statusBtn,
+            {backgroundColor: status === 'Untouched' ? color : 'grey'},
+          ]}>
           <Text style={styles.statusText}>Untouched</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => setStatus('In Progress')}
-          style={[styles.statusBtn, {backgroundColor: status === 'In Progress' ? color : "grey"}]}>
+          style={[
+            styles.statusBtn,
+            {backgroundColor: status === 'In Progress' ? color : 'grey'},
+          ]}>
           <Text>In Progress</Text>
         </TouchableOpacity>
         <TouchableOpacity
+          disabled={completed.length <= 0 ? true : false}
           onPress={() => setStatus('Completed')}
-          style={[styles.statusBtn, {backgroundColor: status === 'Completed' ? color : "grey"}]}>
-          <Text>Completed</Text>
+          style={[
+            styles.statusBtn,
+            {backgroundColor: status === 'Completed' ? color : 'grey'},
+          ]}>
+          <Text
+            style={{
+              textDecorationLine:
+                completed.length <= 0 ? 'line-through' : 'none',
+            }}>
+            Completed
+          </Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.flatList}>
         {status === 'Untouched' ? (
-          <SwipeListView
-            data={newTasks}
-            renderItem={renderTasks}
-            leftOpenValue={110}
-            rightOpenValue={-210}
-            renderHiddenItem={renderHiddenOptions}
-          />
+          renderUntouched()
         ) : status === 'In Progress' ? (
-          <SwipeListView
-            data={inProgress}
-            renderItem={renderTasks}
-            leftOpenValue={110}
-            rightOpenValue={-110}
-            renderHiddenItem={renderHiddenOptions}
-          />
+          renderInProgress()
         ) : (
           <FlatList data={completed} renderItem={renderTasks} />
         )}
@@ -175,8 +208,10 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   flatList: {
+    backgroundColor: '#d3d3d3',
+    borderRadius: 10,
     marginTop: 20,
-    height: 420
+    height: 420,
   },
   hiddenContainer: {
     flexDirection: 'row',
