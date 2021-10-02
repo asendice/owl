@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectItem from './ProjectItem';
+import NoProjectContent from "./NoProjectContent"
 import {SafeAreaView, View, Text, StyleSheet, FlatList} from 'react-native';
 
 const HomeProjects = ({projects, setSelectedProject}) => {
@@ -10,11 +11,15 @@ const HomeProjects = ({projects, setSelectedProject}) => {
     <SafeAreaView style={styles.projects}>
       <Text style={styles.header}>Projects</Text>
       <View style={styles.flatList}>
-        <FlatList
-          data={projects.sort((a, b) => a.timestamp - b.timestamp)}
-          renderItem={renderProjects}
-          horizontal={true}
-        />
+        {projects.length > 0 ? (
+          <FlatList
+            data={projects.sort((a, b) => a.timestamp - b.timestamp)}
+            renderItem={renderProjects}
+            horizontal={true}
+          />
+        ) : (
+          <NoProjectContent />
+        )}
       </View>
     </SafeAreaView>
   );

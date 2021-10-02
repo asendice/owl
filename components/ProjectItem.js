@@ -1,14 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-native';
 
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 const ProjectItem = ({project, setSelectedProject}) => {
   return (
-    <Link to="/project" onPress={() => setSelectedProject(project)}>
+    <Link
+      to="/project"
+      component={TouchableOpacity}
+      onPress={() => setSelectedProject(project)}>
       <View style={styles.container}>
         <Text style={styles.text}>{project.tasks.length} Tasks</Text>
-        <Text style={[styles.title, {color: project.category.categoryColor}]}>{project.title}</Text>
+        <Text style={[styles.title, {color: project.category.categoryColor}]}>
+          {project.title}
+        </Text>
         <Text style={styles.date}>{project.date}</Text>
       </View>
     </Link>
@@ -35,9 +40,9 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
   date: {
-    color: "#fff",
-    fontWeight: "600"
-  }
+    color: '#fff',
+    fontWeight: '600',
+  },
 });
 
 export default ProjectItem;

@@ -2,17 +2,17 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {Link} from 'react-router-native';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, StyleSheet} from 'react-native';
 const Navigation = () => {
   return (
     <View style={styles.navigation}>
-      <Link to="/">
+      <Link to="/" component={TouchableOpacity}>
         <View style={styles.navIcons}>
           <Icon name="home" size={24} color="#333" />
           {/* <Text style={styles.text}>Home</Text> */}
         </View>
       </Link>
-      <Link to="/createproject">
+      <Link to="/createproject" component={TouchableOpacity}>
         <View style={styles.navIcons}>
           <Icon name="folder" size={24} color="#333" />
           {/* <Text style={styles.text}>Create Project</Text> */}
