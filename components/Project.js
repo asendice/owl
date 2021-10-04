@@ -18,6 +18,7 @@ const Project = ({selectedProject, addTasks}) => {
         color={selectedProject.category.categoryColor}
         projId={selectedProject.id}
         tasks={selectedProject.tasks}
+        title={selectedProject.title}
         setTasks={setTasks}
       />
     </SafeAreaView>

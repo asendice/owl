@@ -4,13 +4,16 @@ Icon.loadFont();
 import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import {SwipeListView} from 'react-native-swipe-list-view';
 import TaskModal from './TaskModal';
+import OptionsModal from './OptionsModal';
 import TaskItem from './TaskItem';
 import NoListContent from './NoListContent';
 
-const ProjectTasks = ({projId, color, tasks, setTasks}) => {
+const ProjectTasks = ({projId, title, color, tasks, setTasks}) => {
   const [task, setTask] = useState({});
   const [status, setStatus] = useState('Untouched');
   const [openModal, setOpenModal] = useState(false);
+  const [openOptionModal, setOpenOptionModal] = useState(false);
+  const [option, setOption] = useState('Edit');
 
   const newTasks = tasks
     .filter(task => task.complete === false && task.inProgress === false)
@@ -21,6 +24,7 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
   const completed = tasks
     .filter(task => task.complete === true)
     .sort((a, b) => a.timestamp - b.timestamp);
+
   useEffect(() => {
     if (task.name) {
       setTasks([...tasks, task]);
@@ -67,8 +71,6 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
             style={[styles.options, {backgroundColor: color}]}>
             <Text style={styles.optionText}>Complete</Text>
           </TouchableOpacity>
-          <Icon />
-          <Icon />
         </View>
       </View>
     );
@@ -115,11 +117,29 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.text}>Project Tasks</Text>
-        <Icon
-          style={[styles.addIcon, {color: color ? color : '#333'}]}
-          name="note-add"
-          onPress={() => setOpenModal(true)}
-        />
+        <View style={styles.iconContainer}>
+          <Icon
+            name="edit"
+            style={[styles.icon, {color: 'orange'}]}
+            onPress={() => {
+              setOption('Edit');
+              setOpenOptionModal(true);
+            }}
+          />
+          <Icon
+            name="delete"
+            style={[styles.icon, {color: 'red'}]}
+            onPress={() => {
+              setOption('Delete');
+              setOpenOptionModal(true);
+            }}
+          />
+          <Icon
+            style={[styles.icon, {color: color ? color : '#333'}]}
+            name="note-add"
+            onPress={() => setOpenModal(true)}
+          />
+        </View>
       </View>
 
       <View style={styles.statusButtons}>
@@ -169,6 +189,13 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
         setTask={setTask}
         projId={projId}
       />
+      <OptionsModal
+        openOptionModal={openOptionModal}
+        setOpenOptionModal={setOpenOptionModal}
+        option={option}
+        title={title}
+        projId={projId}
+      />
     </View>
   );
 };
@@ -187,9 +214,15 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '500',
   },
-  addIcon: {
+  icon: {
     fontSize: 33,
   },
+  iconContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: 175,
+  },
+
   statusButtons: {
     marginTop: 20,
     flexDirection: 'row',
