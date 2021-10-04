@@ -103,62 +103,65 @@ const CreateForm = ({setProj, proj}) => {
           />
         </View>
       </View>
-      <View style={styles.whenContainer}>
-        <View style={styles.dateContainer}>
-          <Text style={styles.header}>Date</Text>
-          <View style={styles.inputContainer}>
-            <Text style={styles.whenText}>{readDate(date)}</Text>
-            <DatePicker
-              timeZoneOffsetInMinutes={-420}
-              modal
-              mode="date"
-              open={open}
-              date={date}
-              onConfirm={date => {
-                setOpen(false);
-                setDate(date);
-              }}
-              onCancel={() => {
-                setOpen(false);
-              }}
-            />
-            <Icon
-              name="calendar"
-              size={20}
-              color="#00c7be"
-              style={{marginBottom: 6}}
-              onPress={() => setOpen(true)}
-            />
+
+      <View>
+      <Text style={styles.header}>Completed On</Text>
+        <View style={styles.whenContainer}>
+          <View style={styles.dateContainer}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.whenText}>{readDate(date)}</Text>
+              <DatePicker
+                timeZoneOffsetInMinutes={-420}
+                modal
+                mode="date"
+                open={open}
+                date={date}
+                onConfirm={date => {
+                  setOpen(false);
+                  setDate(date);
+                }}
+                onCancel={() => {
+                  setOpen(false);
+                }}
+              />
+              <Icon
+                name="calendar"
+                size={20}
+                color="#00c7be"
+                style={{marginBottom: 6}}
+                onPress={() => setOpen(true)}
+              />
+            </View>
           </View>
-        </View>
-        <View style={styles.timeContainer}>
-          <Text style={styles.header}>Time</Text>
-          <View style={styles.inputContainer}>
-            <Text style={styles.whenText}>{readTime(time)}</Text>
-            <DatePicker
-              timeZoneOffsetInMinutes={-420}
-              modal
-              mode="time"
-              date={time}
-              open={openTime}
-              onConfirm={time => {
-                setOpenTime(false);
-                setTime(time);
-              }}
-              onCancel={() => {
-                setOpenTime(false);
-              }}
-            />
-            <Icon
-              name="clock-o"
-              size={20}
-              color="#00c7be"
-              style={{marginBottom: 6}}
-              onPress={() => setOpenTime(true)}
-            />
+          <View style={styles.timeContainer}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.whenText}>{readTime(time)}</Text>
+              <DatePicker
+                timeZoneOffsetInMinutes={-420}
+                modal
+                mode="time"
+                date={time}
+                open={openTime}
+                onConfirm={time => {
+                  setOpenTime(false);
+                  setTime(time);
+                }}
+                onCancel={() => {
+                  setOpenTime(false);
+                }}
+              />
+              <Icon
+                name="clock-o"
+                size={20}
+                color="#00c7be"
+                style={{marginBottom: 6}}
+                onPress={() => setOpenTime(true)}
+              />
+            </View>
           </View>
         </View>
       </View>
+
       <View style={styles.descriptionContainer}>
         <Text style={styles.header}>Goal</Text>
         <View style={styles.inputContainer}>
@@ -241,6 +244,7 @@ const styles = StyleSheet.create({
   whenContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginTop: 10,
   },
   dateContainer: {
     width: 150,

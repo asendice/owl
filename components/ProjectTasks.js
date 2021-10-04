@@ -88,7 +88,7 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
         />
       );
     } else {
-      return <NoListContent setOpenModal={setOpenModal} />;
+      return <NoListContent setOpenModal={setOpenModal} section="Untouched" />;
     }
   };
   const renderInProgress = () => {
@@ -105,7 +105,9 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
         />
       );
     } else {
-      return <NoListContent setOpenModal={setOpenModal} />;
+      return (
+        <NoListContent setOpenModal={setOpenModal} section="In Progress" />
+      );
     }
   };
 
@@ -127,7 +129,7 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
             styles.statusBtn,
             {backgroundColor: status === 'Untouched' ? color : 'grey'},
           ]}>
-          <Text style={styles.statusText}>Untouched</Text>
+          <Text style={styles.statusText}>New Tasks</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => setStatus('In Progress')}
@@ -143,14 +145,11 @@ const ProjectTasks = ({projId, color, tasks, setTasks}) => {
           style={[
             styles.statusBtn,
             {backgroundColor: status === 'Completed' ? color : 'grey'},
+            {
+              opacity: completed.length <= 0 ? 0.5 : 1,
+            },
           ]}>
-          <Text
-            style={{
-              textDecorationLine:
-                completed.length <= 0 ? 'line-through' : 'none',
-            }}>
-            Completed
-          </Text>
+          <Text>Completed</Text>
         </TouchableOpacity>
       </View>
 

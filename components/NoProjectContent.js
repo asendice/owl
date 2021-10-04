@@ -6,11 +6,12 @@ import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 
 const NoProjectContent = () => {
   return (
-    <Link to="/createproject" component={TouchableOpacity}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Add A Project</Text>
-        <Icon name="plus" style={styles.icon} />
-      </View>
+    <Link
+      style={styles.container}
+      to="/createproject"
+      component={TouchableOpacity}>
+      <Text style={styles.title}>Add A Project</Text>
+      <Icon name="plus" style={styles.icon} />
     </Link>
   );
 };
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   icon: {
-    fontSize: 18,
+    fontSize: 24,
     color: '#00c7be',
   },
 });
