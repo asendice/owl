@@ -210,7 +210,7 @@ const ProjectTasks = ({
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
+    marginTop: 20,
     minHeight: 100,
     flex: 1,
   },
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
   },
 
   statusButtons: {
-    marginTop: 20,
+    marginTop: 10,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },

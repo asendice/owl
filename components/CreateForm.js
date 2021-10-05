@@ -104,7 +104,7 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
             placeholder="Your Project's Title"
             onChangeText={setTitle}
             value={title}
-            maxLength={35}
+            maxLength={28}
           />
           <Icon
             name="times"
@@ -125,7 +125,7 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
                 timeZoneOffsetInMinutes={-420}
                 minimumDate={new Date()}
                 modal
-                mode="date"
+                mode="datetime"
                 open={open}
                 date={date}
                 onConfirm={date => {
@@ -147,8 +147,8 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
           </View>
           <View style={styles.timeContainer}>
             <View style={styles.inputContainer}>
-              <Text style={styles.whenText}>{readTime(time)}</Text>
-              <DatePicker
+              <Text style={styles.whenText}>{readTime(date)}</Text>
+              {/* <DatePicker
                 timeZoneOffsetInMinutes={-420}
                 minimumDate={new Date()}
                 modal
@@ -162,13 +162,13 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
                 onCancel={() => {
                   setOpenTime(false);
                 }}
-              />
+              /> */}
               <Icon
                 name="clock-o"
                 size={20}
                 color="#00c7be"
                 style={{marginBottom: 6}}
-                onPress={() => setOpenTime(true)}
+                onPress={() => setOpen(true)}
               />
             </View>
           </View>
@@ -185,7 +185,7 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
             value={desc}
             blurOnSubmit={true}
             multiline
-            maxLength={100}
+            maxLength={60}
           />
           <Icon
             name="times"

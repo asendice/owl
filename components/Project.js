@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Header from '../components/Header';
+import Completion from '../components/Completion';
 import ProjectTasks from '../components/ProjectTasks';
 import {
   SafeAreaView,
@@ -18,6 +19,7 @@ const Project = ({selectedProject, addTasks, deleteProject}) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Completion date={selectedProject.date} />
       <Header title={selectedProject.title} project={selectedProject} />
       <Text style={styles.goal}>"{selectedProject.desc}"</Text>
       <ProjectTasks

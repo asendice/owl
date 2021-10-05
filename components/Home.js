@@ -11,7 +11,7 @@ const Home = ({projects, setSelectedProject}) => {
 
   return (
     <SafeAreaView>
-      <Header title="Owl " />
+      <Header title="Owl" />
       <HomeProjects
         projects={projects}
         setSelectedProject={setSelectedProject}
