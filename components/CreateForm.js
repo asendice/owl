@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
 import CategoryModal from './CategoryModal';
 import DatePicker from 'react-native-date-picker';
+import {DeepLinking, Link} from 'react-router-native';
+import {readTime, readDate} from '../utils/auth';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {
@@ -14,15 +16,23 @@ import {
   FlatList,
 } from 'react-native';
 
-const CreateForm = ({setProj, proj}) => {
+const CreateForm = ({setProj, selectedProject, editProject}) => {
   const [open, setOpen] = useState(false);
   const [openTime, setOpenTime] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const [time, setTime] = useState(new Date());
-  const [date, setDate] = useState(new Date());
-  const [selectedCategory, setSelectedCategory] = useState({});
-  const [title, setTitle] = useState('');
-  const [desc, setDesc] = useState('');
+  const [time, setTime] = useState(
+    selectedProject ? selectedProject.time : new Date(),
+  );
+  const [date, setDate] = useState(
+    selectedProject ? selectedProject.date : new Date(),
+  );
+  const [selectedCategory, setSelectedCategory] = useState(
+    selectedProject ? selectedProject.category : {},
+  );
+  const [title, setTitle] = useState(
+    selectedProject ? selectedProject.title : '',
+  );
+  const [desc, setDesc] = useState(selectedProject ? selectedProject.desc : '');
   const [categoryName, setCategoryName] = useState('');
   const [categories, setCategories] = useState([
     {
@@ -42,33 +52,34 @@ const CreateForm = ({setProj, proj}) => {
     },
   ]);
 
-  const readDate = str => {
-    let newDate = str.toString().slice(4, 15);
-    return newDate.slice(0, 6) + ',' + newDate.slice(6, 15);
-  };
-
-  const readTime = str => {
-    let time = str.toString().slice(16, 24);
-    let twelve = Number(time.slice(0, 2));
-    if (twelve > 12) {
-      return twelve - 12 + ':' + time.slice(3, 5) + 'PM';
-    } else {
-      return twelve + ':' + time.slice(3, 5) + 'AM';
-    }
-  };
+  console.log(selectedProject, 'selectedProject');
 
   const onCreateProjPress = () => {
     let obj = {
       id: Math.random(),
       title: title,
-      date: readDate(date),
-      time: readTime(time),
+      date: date,
+      time: time,
       desc: desc,
       category: selectedCategory,
       tasks: [],
       timestamp: new Date(),
     };
     setProj(obj);
+  };
+
+  const onEditProjPress = () => {
+    let obj = {
+      id: selectedProject.id,
+      title: title,
+      date: date,
+      time: time,
+      desc: desc,
+      category: selectedCategory,
+      tasks: selectedProject.tasks,
+      timestamp: selectedProject.timestamp,
+    };
+    editProject(obj);
   };
 
   const renderCategories = ({item}) => (
@@ -105,7 +116,7 @@ const CreateForm = ({setProj, proj}) => {
       </View>
 
       <View>
-      <Text style={styles.header}>Completed On</Text>
+        <Text style={styles.header}>Completed On</Text>
         <View style={styles.whenContainer}>
           <View style={styles.dateContainer}>
             <View style={styles.inputContainer}>
@@ -197,11 +208,22 @@ const CreateForm = ({setProj, proj}) => {
           </TouchableOpacity>
         </View>
       </View>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => onCreateProjPress()}>
-        <Text style={styles.buttonText}>CREATE PROJECT</Text>
-      </TouchableOpacity>
+      {selectedProject ? (
+        <Link
+          to="/"
+          component={TouchableOpacity}
+          style={styles.button}
+          onPress={() => onEditProjPress()}>
+          <Text style={styles.buttonText}>EDIT PROJECT</Text>
+        </Link>
+      ) : (
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => onCreateProjPress()}>
+          <Text style={styles.buttonText}>CREATE PROJECT</Text>
+        </TouchableOpacity>
+      )}
+
       <CategoryModal
         openModal={openModal}
         setOpenModal={setOpenModal}

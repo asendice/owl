@@ -8,7 +8,14 @@ import OptionsModal from './OptionsModal';
 import TaskItem from './TaskItem';
 import NoListContent from './NoListContent';
 
-const ProjectTasks = ({projId, title, color, tasks, setTasks}) => {
+const ProjectTasks = ({
+  projId,
+  title,
+  color,
+  tasks,
+  setTasks,
+  deleteProject,
+}) => {
   const [task, setTask] = useState({});
   const [status, setStatus] = useState('Untouched');
   const [openModal, setOpenModal] = useState(false);
@@ -195,6 +202,7 @@ const ProjectTasks = ({projId, title, color, tasks, setTasks}) => {
         option={option}
         title={title}
         projId={projId}
+        deleteProject={deleteProject}
       />
     </View>
   );

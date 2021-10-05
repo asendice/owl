@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {View, Modal, Text, TouchableOpacity, StyleSheet} from 'react-native';
@@ -8,6 +9,7 @@ const OptionsModal = ({
   option,
   title,
   projId,
+  deleteProject,
 }) => {
   return (
     <Modal animationType="slide" transparent={true} visible={openOptionModal}>
@@ -22,13 +24,23 @@ const OptionsModal = ({
               style={[styles.btn, {backgroundColor: 'grey'}]}>
               <Text style={styles.btnText}>Cancel</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                styles.btn,
-                {backgroundColor: option === 'Delete' ? 'red' : 'orange'},
-              ]}>
-              <Text style={styles.btnText}>{option}</Text>
-            </TouchableOpacity>
+            {option === 'Delete' ? (
+              <Link
+                to="/"
+                component={TouchableOpacity}
+                onPress={() => deleteProject(projId)}
+                style={[styles.btn, {backgroundColor: 'red'}]}>
+                <Text style={styles.btnText}>Delete</Text>
+              </Link>
+            ) : (
+              <Link
+                to="/editproject"
+                component={TouchableOpacity}
+                // onPress={() => deleteProject(projId)}
+                style={[styles.btn, {backgroundColor: 'orange'}]}>
+                <Text style={styles.btnText}>Edit</Text>
+              </Link>
+            )}
           </View>
         </View>
       </View>
@@ -59,7 +71,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  text:{
+  text: {
     fontSize: 16,
   },
   btn: {

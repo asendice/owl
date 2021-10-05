@@ -40,7 +40,10 @@ const TaskModal = ({openModal, setOpenModal, color, setTask, projId}) => {
             size={24}
             color="#d3d3d3"
             style={styles.closeModal}
-            onPress={() => setOpenModal(false)}
+            onPress={() => {
+              setOpenModal(false);
+              setPriority('High');
+            }}
           />
           <Text style={styles.header}>Add A New Task</Text>
           <TextInput

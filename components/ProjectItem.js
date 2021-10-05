@@ -1,4 +1,5 @@
 import React from 'react';
+import {readDate} from '../utils/auth';
 import {Link} from 'react-router-native';
 
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
@@ -14,7 +15,7 @@ const ProjectItem = ({project, setSelectedProject}) => {
         <Text style={[styles.title, {color: project.category.categoryColor}]}>
           {project.title}
         </Text>
-        <Text style={styles.date}>{project.date}</Text>
+        <Text style={styles.date}>{readDate(project.date)}</Text>
       </View>
     </Link>
   );

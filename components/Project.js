@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import ProjectTasks from '../components/ProjectTasks';
 import {SafeAreaView, ScrollView, Text, TextInput, StyleSheet} from 'react-native';
 
-const Project = ({selectedProject, addTasks}) => {
+const Project = ({selectedProject, addTasks, deleteProject}) => {
   const [tasks, setTasks] = useState(selectedProject.tasks);
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const Project = ({selectedProject, addTasks}) => {
         tasks={selectedProject.tasks}
         title={selectedProject.title}
         setTasks={setTasks}
+        deleteProject={deleteProject}
       />
     </SafeAreaView>
   );
