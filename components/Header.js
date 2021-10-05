@@ -1,10 +1,18 @@
 import React from 'react';
 import {SafeAreaView, Text, StyleSheet} from 'react-native';
 
-const Header = ({ title }) => {
+const Header = ({title, project}) => {
   return (
     <SafeAreaView style={styles.header}>
-      <Text style={styles.text}>{title}</Text>
+      <Text
+        style={[
+          styles.text,
+          {
+            marginLeft: project ? 0 : 20,
+          },
+        ]}>
+        {title}
+      </Text>
     </SafeAreaView>
   );
 };
@@ -12,14 +20,13 @@ const Header = ({ title }) => {
 const styles = StyleSheet.create({
   header: {
     height: 60,
-    justifyContent: "center",
+    justifyContent: 'center',
     marginTop: 20,
   },
   text: {
     fontSize: 24,
-    marginLeft: 20,
-    fontWeight: "600"
-  }
+    fontWeight: '600',
+  },
 });
 
 export default Header;

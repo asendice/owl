@@ -1,7 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import Header from '../components/Header';
 import ProjectTasks from '../components/ProjectTasks';
-import {SafeAreaView, ScrollView, Text, TextInput, StyleSheet} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TextInput,
+  StyleSheet,
+} from 'react-native';
 
 const Project = ({selectedProject, addTasks, deleteProject}) => {
   const [tasks, setTasks] = useState(selectedProject.tasks);
@@ -12,7 +18,7 @@ const Project = ({selectedProject, addTasks, deleteProject}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header title={selectedProject.title} />
+      <Header title={selectedProject.title} project={selectedProject} />
       <Text style={styles.goal}>"{selectedProject.desc}"</Text>
       <ProjectTasks
         color={selectedProject.category.categoryColor}

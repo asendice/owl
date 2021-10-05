@@ -123,6 +123,7 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
               <Text style={styles.whenText}>{readDate(date)}</Text>
               <DatePicker
                 timeZoneOffsetInMinutes={-420}
+                minimumDate={new Date()}
                 modal
                 mode="date"
                 open={open}
@@ -149,6 +150,7 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
               <Text style={styles.whenText}>{readTime(time)}</Text>
               <DatePicker
                 timeZoneOffsetInMinutes={-420}
+                minimumDate={new Date()}
                 modal
                 mode="time"
                 date={time}

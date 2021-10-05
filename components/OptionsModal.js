@@ -36,7 +36,6 @@ const OptionsModal = ({
               <Link
                 to="/editproject"
                 component={TouchableOpacity}
-                // onPress={() => deleteProject(projId)}
                 style={[styles.btn, {backgroundColor: 'orange'}]}>
                 <Text style={styles.btnText}>Edit</Text>
               </Link>
@@ -70,6 +69,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+    padding: 10,
   },
   text: {
     fontSize: 16,
