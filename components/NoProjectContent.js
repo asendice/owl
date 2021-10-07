@@ -10,8 +10,8 @@ const NoProjectContent = () => {
       style={styles.container}
       to="/createproject"
       component={TouchableOpacity}>
-      <Text style={styles.title}>Add A Project</Text>
-      <Icon name="plus" style={styles.icon} />
+      <Text style={styles.title}>Add Project</Text>
+      <Icon name="folder" style={styles.icon} />
     </Link>
   );
 };

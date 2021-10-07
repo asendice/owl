@@ -123,7 +123,7 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
       </View>
 
       <View>
-        <Text style={styles.header}>Completed On</Text>
+        <Text style={styles.header}>Estimated Completion Date</Text>
         <View style={styles.whenContainer}>
           <View style={styles.dateContainer}>
             <View style={styles.inputContainer}>
