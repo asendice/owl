@@ -42,6 +42,7 @@ const CategoryModal = ({
             style={styles.closeModal}
             onPress={() => setOpenModal(false)}
           />
+          <Text>Create Category</Text>
           <TextInput
             style={styles.modalInput}
             placeholder="Category Name"

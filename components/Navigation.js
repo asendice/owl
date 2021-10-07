@@ -8,14 +8,12 @@ const Navigation = () => {
     <View style={styles.navigation}>
       <Link to="/" component={TouchableOpacity}>
         <View style={styles.navIcons}>
-          <Icon name="home" size={24} color="#333" />
-          {/* <Text style={styles.text}>Home</Text> */}
+          <Icon name="home" size={28} color="#333" />
         </View>
       </Link>
       <Link to="/createproject" component={TouchableOpacity}>
         <View style={styles.navIcons}>
-          <Icon name="folder" size={24} color="#333" />
-          {/* <Text style={styles.text}>Create Project</Text> */}
+          <Icon name="folder" size={28} color="#333" />
         </View>
       </Link>
     </View>
@@ -38,16 +36,11 @@ const styles = StyleSheet.create({
   navIcons: {
     padding: 10,
     borderRadius: 10,
-    backgroundColor: "#00c7be",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center"
+    backgroundColor: '#00c7be',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
-  text: {
-    color: "#333",
-    fontSize: 17,
-    fontWeight: "600",
-  }
 });
 
 export default Navigation;

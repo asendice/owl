@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import CategoryItem from './CategoryItem';
 import CategoryModal from './CategoryModal';
 import DatePicker from 'react-native-date-picker';
-import {DeepLinking, Link} from 'react-router-native';
+import {Link} from 'react-router-native';
 import {readTime, readDate} from '../utils/auth';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
@@ -18,7 +18,6 @@ import {
 
 const CreateForm = ({setProj, selectedProject, editProject}) => {
   const [open, setOpen] = useState(false);
-  const [openTime, setOpenTime] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [time, setTime] = useState(
     selectedProject ? selectedProject.time : new Date(),
@@ -27,32 +26,40 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
     selectedProject ? selectedProject.date : new Date(),
   );
   const [selectedCategory, setSelectedCategory] = useState(
-    selectedProject ? selectedProject.category : {},
+    selectedProject
+      ? selectedProject.category
+      : {
+          id: 0,
+          name: 'Work',
+          categoryColor: '#2EA7BD',
+        },
   );
   const [title, setTitle] = useState(
     selectedProject ? selectedProject.title : '',
   );
   const [desc, setDesc] = useState(selectedProject ? selectedProject.desc : '');
   const [categoryName, setCategoryName] = useState('');
-  const [categories, setCategories] = useState([
-    {
-      id: 0,
-      name: 'Work',
-      categoryColor: '#2EA7BD',
-    },
-    {
-      id: 1,
-      name: 'Home',
-      categoryColor: '#F58B00',
-    },
-    {
-      id: 2,
-      name: 'Health',
-      categoryColor: '#1ec337',
-    },
-  ]);
-
-  console.log(selectedProject, 'selectedProject');
+  const [categories, setCategories] = useState(
+    selectedProject
+      ? [selectedProject.category]
+      : [
+          {
+            id: 0,
+            name: 'Work',
+            categoryColor: '#2EA7BD',
+          },
+          {
+            id: 1,
+            name: 'Home',
+            categoryColor: '#F58B00',
+          },
+          {
+            id: 2,
+            name: 'Health',
+            categoryColor: '#1ec337',
+          },
+        ],
+  );
 
   const onCreateProjPress = () => {
     let obj = {
@@ -148,21 +155,6 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
           <View style={styles.timeContainer}>
             <View style={styles.inputContainer}>
               <Text style={styles.whenText}>{readTime(date)}</Text>
-              {/* <DatePicker
-                timeZoneOffsetInMinutes={-420}
-                minimumDate={new Date()}
-                modal
-                mode="time"
-                date={time}
-                open={openTime}
-                onConfirm={time => {
-                  setOpenTime(false);
-                  setTime(time);
-                }}
-                onCancel={() => {
-                  setOpenTime(false);
-                }}
-              /> */}
               <Icon
                 name="clock-o"
                 size={20}
@@ -195,7 +187,7 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
           />
         </View>
       </View>
-      <View style={styles.categoryContainer}>
+      <View>
         <Text style={styles.header}>Category</Text>
         <View style={styles.flatList}>
           <FlatList
@@ -225,7 +217,6 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
           <Text style={styles.buttonText}>CREATE PROJECT</Text>
         </TouchableOpacity>
       )}
-
       <CategoryModal
         openModal={openModal}
         setOpenModal={setOpenModal}

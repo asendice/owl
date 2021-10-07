@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {Link} from 'react-router-native';
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text,StyleSheet, TouchableOpacity} from 'react-native';
 
 const NoProjectContent = () => {
   return (

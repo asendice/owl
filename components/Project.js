@@ -4,9 +4,7 @@ import Completion from '../components/Completion';
 import ProjectTasks from '../components/ProjectTasks';
 import {
   SafeAreaView,
-  ScrollView,
   Text,
-  TextInput,
   StyleSheet,
 } from 'react-native';
 
