@@ -50,6 +50,7 @@ const TaskModal = ({openModal, setOpenModal, color, setTask, projId}) => {
             style={styles.input}
             placeholder="Task Name"
             onChangeText={setName}
+            maxLength={28}
           />
           <View style={styles.priority}>
             <Text style={styles.textHeader}>Priority</Text>

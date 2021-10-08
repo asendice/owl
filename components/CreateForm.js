@@ -123,9 +123,11 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
       </View>
 
       <View>
-        <Text style={styles.header}>Estimated Completion Date</Text>
+        <Text style={styles.header}>Deadline</Text>
         <View style={styles.whenContainer}>
-          <View style={styles.dateContainer}>
+          <TouchableOpacity
+            onPress={() => setOpen(true)}
+            style={styles.dateContainer}>
             <View style={styles.inputContainer}>
               <Text style={styles.whenText}>{readDate(date)}</Text>
               <DatePicker
@@ -148,11 +150,12 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
                 size={20}
                 color="#00c7be"
                 style={{marginBottom: 6}}
-                onPress={() => setOpen(true)}
               />
             </View>
-          </View>
-          <View style={styles.timeContainer}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setOpen(true)}
+            style={styles.dateContainer}>
             <View style={styles.inputContainer}>
               <Text style={styles.whenText}>{readTime(date)}</Text>
               <Icon
@@ -160,10 +163,9 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
                 size={20}
                 color="#00c7be"
                 style={{marginBottom: 6}}
-                onPress={() => setOpen(true)}
               />
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
 

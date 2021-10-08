@@ -51,7 +51,7 @@ const MyTasks = ({tasks}) => {
 
 const styles = StyleSheet.create({
   MyTasks: {
-    marginTop: 40,
+    marginTop: 20,
     width: '90%',
   },
   header: {

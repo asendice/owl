@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
   },
   flatList: {
     backgroundColor: '#d3d3d3',
-    borderRadius: 10,
+    // borderRadius: 10,
     marginTop: 20,
     height: 420,
   },
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
   options: {
     flex: 1,
     height: 60,
-    borderRadius: 10,
+    // borderRadius: 10,
     backgroundColor: 'pink',
     justifyContent: 'center',
     alignItems: 'center',
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: 'red',
     height: '100%',
-    borderRadius: 10,
+    // borderRadius: 10,
     height: 60,
     justifyContent: 'center',
   },
