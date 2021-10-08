@@ -217,6 +217,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: "center"
   },
   text: {
     fontSize: 22,
@@ -229,6 +230,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: 175,
+    borderRadius: 20,
+    padding: 3,
+    backgroundColor: "#333"
   },
 
   statusButtons: {

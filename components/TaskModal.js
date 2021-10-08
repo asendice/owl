@@ -48,7 +48,7 @@ const TaskModal = ({openModal, setOpenModal, color, setTask, projId}) => {
           <Text style={styles.header}>Add A New Task</Text>
           <TextInput
             style={styles.input}
-            placeholder="Task Name..."
+            placeholder="Task Name"
             onChangeText={setName}
           />
           <View style={styles.priority}>
@@ -125,15 +125,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   header: {
-    fontSize: 16,
     fontWeight: '600',
   },
   input: {
-    padding: 10,
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: '#d3d3d3',
-    width: 240,
+    fontSize: 24,
   },
   priority: {
     width: '60%',

@@ -1,19 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {NativeRouter, Route} from 'react-router-native';
 import Home from './components/Home';
 import CreateProject from './components/CreateProject';
 import EditProject from './components/EditProject';
 import Navigation from './components/Navigation';
 import Project from './components/Project';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 
 const App = () => {
   const [projects, setProjects] = useState([]);

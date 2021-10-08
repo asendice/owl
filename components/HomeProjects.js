@@ -14,7 +14,15 @@ import {
 
 const HomeProjects = ({projects, setSelectedProject}) => {
   const [term, setTerm] = useState('');
-  console.log(projects, 'projects');
+  const updatedProjects = projects
+    .filter(
+      prj =>
+        prj.title.toLowerCase().includes(term.toLowerCase()) ||
+        prj.category.name.toLowerCase().includes(term.toLowerCase()),
+    )
+    .sort((a, b) => b.timestamp - a.timestamp);
+  console.log(projects.length, 'projects');
+  console.log(updatedProjects.length, 'updatedProjects');
   const renderProjects = ({item}) => (
     <ProjectItem project={item} setSelectedProject={setSelectedProject} />
   );
@@ -32,18 +40,14 @@ const HomeProjects = ({projects, setSelectedProject}) => {
         </View>
       </View>
       <View style={styles.flatList}>
-        {projects.length > 0 ? (
+        {projects.length > 0 && updatedProjects.length > 0 ? (
           <FlatList
-            data={projects
-              .filter(
-                prj =>
-                  prj.title.toLowerCase().includes(term.toLowerCase()) ||
-                  prj.category.name.toLowerCase().includes(term.toLowerCase()),
-              )
-              .sort((a, b) => a.timestamp - b.timestamp)}
+            data={updatedProjects}
             renderItem={renderProjects}
             horizontal={true}
           />
+        ) : projects.length > 0 && updatedProjects.length === 0 ? (
+          <Text style={styles.noResultText}>No Results Found For "{term}"</Text>
         ) : (
           <NoProjectContent />
         )}
@@ -85,6 +89,13 @@ const styles = StyleSheet.create({
   flatList: {
     padding: 10,
     height: 180,
+  },
+  noResultText: {
+    color: "grey",
+    fontSize: 20,
+    fontStyle: "italic",
+    alignSelf: "center",
+    marginTop: 20,
   },
 });
 

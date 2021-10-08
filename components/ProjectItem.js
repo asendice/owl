@@ -11,7 +11,12 @@ const ProjectItem = ({project, setSelectedProject}) => {
       component={TouchableOpacity}
       onPress={() => setSelectedProject(project)}>
       <View style={styles.container}>
-        <Text style={{color: project.category.categoryColor}}>
+        <Text
+          style={{
+            color: project.category.categoryColor,
+            fontSize: 16,
+            fontWeight: '500',
+          }}>
           {project.category.name}
         </Text>
         <Text style={styles.text}>{project.tasks.length} Tasks</Text>

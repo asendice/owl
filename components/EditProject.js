@@ -6,7 +6,7 @@ import {View, Text, StyleSheet} from 'react-native';
 const EditProject = ({selectedProject, editProject}) => {
   return (
     <View style={styles.container}>
-      <Header title={`Edit Project "${selectedProject.title}"`} />
+      <Header title={`Edit Project `} />
       <CreateForm selectedProject={selectedProject} editProject={editProject} />
     </View>
   );
