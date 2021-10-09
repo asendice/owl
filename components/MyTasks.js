@@ -8,7 +8,7 @@ const MyTasks = ({tasks}) => {
   const progress = tasks.filter(task => task.inProgress === true);
   const completed = tasks.filter(task => task.complete === true);
   return (
-    <View style={styles.MyTasks}>
+    <View style={styles.container}>
       <Text style={styles.header}>My Tasks</Text>
       <View>
         <View style={styles.taskItems}>
@@ -50,8 +50,8 @@ const MyTasks = ({tasks}) => {
 };
 
 const styles = StyleSheet.create({
-  MyTasks: {
-    marginTop: 20,
+  container: {
+    marginTop: 10,
     width: '90%',
   },
   header: {

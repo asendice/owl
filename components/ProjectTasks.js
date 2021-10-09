@@ -3,18 +3,21 @@ import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 Icon.loadFont();
 import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import {SwipeListView} from 'react-native-swipe-list-view';
+import {Link} from 'react-router-native';
 import TaskModal from './TaskModal';
 import OptionsModal from './OptionsModal';
 import TaskItem from './TaskItem';
 import NoListContent from './NoListContent';
 
 const ProjectTasks = ({
+  selectedProject,
   projId,
   title,
   color,
   tasks,
   setTasks,
   deleteProject,
+  completeProject,
 }) => {
   const [task, setTask] = useState({});
   const [status, setStatus] = useState('Untouched');
@@ -179,7 +182,6 @@ const ProjectTasks = ({
           <Text>Completed</Text>
         </TouchableOpacity>
       </View>
-
       <View style={styles.flatList}>
         {status === 'Untouched' ? (
           renderUntouched()
@@ -189,6 +191,17 @@ const ProjectTasks = ({
           <FlatList data={completed} renderItem={renderTasks} />
         )}
       </View>
+      {newTasks.length === 0 &&
+      inProgress.length === 0 &&
+      completed.length > 0 ? (
+        <Link
+          style={[styles.completeBtn, {backgroundColor: color}]}
+          component={TouchableOpacity}
+          onPress={() => completeProject(selectedProject)}
+          to="/">
+          <Text style={styles.completeBtnText}>Complete Project</Text>
+        </Link>
+      ) : null}
       <TaskModal
         openModal={openModal}
         setOpenModal={setOpenModal}
@@ -212,12 +225,11 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     minHeight: 100,
-    flex: 1,
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: "center"
+    alignItems: 'center',
   },
   text: {
     fontSize: 22,
@@ -232,7 +244,7 @@ const styles = StyleSheet.create({
     width: 175,
     borderRadius: 20,
     padding: 3,
-    backgroundColor: "#333"
+    backgroundColor: '#333',
   },
 
   statusButtons: {
@@ -291,6 +303,18 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 18,
     color: '#fff',
+  },
+  completeBtn: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    height: 40,
+    marginTop: 8,
+  },
+  completeBtnText: {
+    color: '#333',
+    fontSize: 18,
+    fontWeight: '600',
   },
 });
 

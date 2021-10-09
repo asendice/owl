@@ -21,8 +21,6 @@ const HomeProjects = ({projects, setSelectedProject}) => {
         prj.category.name.toLowerCase().includes(term.toLowerCase()),
     )
     .sort((a, b) => b.timestamp - a.timestamp);
-  console.log(projects.length, 'projects');
-  console.log(updatedProjects.length, 'updatedProjects');
   const renderProjects = ({item}) => (
     <ProjectItem project={item} setSelectedProject={setSelectedProject} />
   );
@@ -88,7 +86,7 @@ const styles = StyleSheet.create({
   },
   flatList: {
     padding: 10,
-    height: 180,
+    // height: 150,
   },
   noResultText: {
     color: "grey",

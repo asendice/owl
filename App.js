@@ -10,11 +10,11 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 const App = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState({});
+  const [completedProjects, setCompletedProjects] = useState([]);
 
   const addTasks = (tasks, id) => {
     const project = projects.filter(proj => proj.id === id);
     const otherProjects = projects.filter(proj => proj.id != id);
-    console.log(project);
     project[0].tasks = tasks;
     setProjects([...otherProjects, project[0]]);
   };
@@ -29,6 +29,12 @@ const App = () => {
     setProjects([...otherProjects, proj]);
   };
 
+  const completeProject = proj => {
+    console.log(proj, "proj")
+    setCompletedProjects([...completedProjects, proj]);
+    deleteProject(proj.id);
+  };
+
   return (
     <NativeRouter>
       <SafeAreaView style={styles.container}>
@@ -36,7 +42,11 @@ const App = () => {
           exact
           path="/"
           render={() => (
-            <Home projects={projects} setSelectedProject={setSelectedProject} />
+            <Home
+              projects={projects}
+              setSelectedProject={setSelectedProject}
+              completedProjects={completedProjects}
+            />
           )}
         />
         <Route
@@ -62,6 +72,7 @@ const App = () => {
               selectedProject={selectedProject}
               addTasks={addTasks}
               deleteProject={deleteProject}
+              completeProject={completeProject}
             />
           )}
         />

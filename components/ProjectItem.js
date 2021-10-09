@@ -1,5 +1,5 @@
 import React from 'react';
-import Completion from './Completion';
+import Deadline from './Deadline';
 import {Link} from 'react-router-native';
 
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
@@ -23,7 +23,7 @@ const ProjectItem = ({project, setSelectedProject}) => {
         <Text style={[styles.title, {color: project.category.categoryColor}]}>
           {project.title}
         </Text>
-        <Completion date={project.date} color="#fff" />
+        <Deadline date={project.date} color="#fff" />
       </View>
     </Link>
   );

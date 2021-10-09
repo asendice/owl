@@ -4,8 +4,9 @@ import {readDate} from '../utils/auth';
 import Header from '../components/Header';
 import HomeProjects from './HomeProjects';
 import MyTasks from './MyTasks';
+import Completed from './Completed';
 
-const Home = ({projects, setSelectedProject}) => {
+const Home = ({projects, setSelectedProject, completedProjects}) => {
   const arrOfTasks = projects.map(proj => {
     return proj.tasks;
   });
@@ -21,6 +22,7 @@ const Home = ({projects, setSelectedProject}) => {
         setSelectedProject={setSelectedProject}
       />
       <MyTasks tasks={arrOfTasks.flat()} />
+      <Completed completedProjects={completedProjects} />
     </SafeAreaView>
   );
 };

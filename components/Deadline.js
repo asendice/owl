@@ -2,7 +2,7 @@ import React from 'react';
 import {readDate, convertMili} from '../utils/auth';
 import {View, Text, StyleSheet} from 'react-native';
 
-const Completion = ({date, color}) => {
+const Deadline = ({date, color}) => {
   const timeRemaining = date - new Date();
   return (
     <View style={styles.container}>
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Completion;
+export default Deadline;
