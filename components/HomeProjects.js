@@ -12,8 +12,7 @@ import {
   FlatList,
 } from 'react-native';
 
-const HomeProjects = ({projects, setSelectedProject}) => {
-  const [term, setTerm] = useState('');
+const HomeProjects = ({projects, setSelectedProject, term, setTerm}) => {
   const updatedProjects = projects
     .filter(
       prj =>
@@ -28,14 +27,6 @@ const HomeProjects = ({projects, setSelectedProject}) => {
     <SafeAreaView style={styles.projects}>
       <View style={styles.headerContainer}>
         <Text style={styles.header}>Projects</Text>
-        <View style={styles.input}>
-          <TextInput
-            placeholder="Search Projects"
-            onChangeText={setTerm}
-            maxLength={28}
-          />
-          <Icon style={styles.icon} name="search" />
-        </View>
       </View>
       <View style={styles.flatList}>
         {projects.length > 0 && updatedProjects.length > 0 ? (
@@ -56,28 +47,11 @@ const HomeProjects = ({projects, setSelectedProject}) => {
 
 const styles = StyleSheet.create({
   projects: {
-    marginTop: 40,
+    marginTop: 10,
   },
   headerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  icon: {
-    color: '#d3d3d3',
-    fontSize: 16,
-  },
-  input: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginRight: 20,
-    borderWidth: 1,
-    borderColor: '#d3d3d3',
-    borderRadius: 10,
-    padding: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
-    width: 200,
   },
   header: {
     fontSize: 18,
@@ -86,13 +60,13 @@ const styles = StyleSheet.create({
   },
   flatList: {
     padding: 10,
-    // height: 150,
+    height: 160,
   },
   noResultText: {
-    color: "grey",
+    color: 'grey',
     fontSize: 20,
-    fontStyle: "italic",
-    alignSelf: "center",
+    fontStyle: 'italic',
+    alignSelf: 'center',
     marginTop: 20,
   },
 });

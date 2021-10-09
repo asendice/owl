@@ -5,6 +5,7 @@ import {Link} from 'react-router-native';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 const ProjectItem = ({project, setSelectedProject}) => {
+  const completed = project.tasks.filter(task => task.complete === true);
   return (
     <Link
       to="/project"
@@ -19,7 +20,11 @@ const ProjectItem = ({project, setSelectedProject}) => {
           }}>
           {project.category.name}
         </Text>
-        <Text style={styles.text}>{project.tasks.length} Tasks</Text>
+        <Text style={styles.text}>
+          {completed.length}
+          /
+          {project.tasks.length}
+        </Text>
         <Text style={[styles.title, {color: project.category.categoryColor}]}>
           {project.title}
         </Text>

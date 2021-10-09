@@ -29,7 +29,7 @@ const OptionsModal = ({
                 to="/"
                 component={TouchableOpacity}
                 onPress={() => deleteProject(projId)}
-                style={[styles.btn, {backgroundColor: 'red'}]}>
+                style={[styles.btn, {backgroundColor: '#ff5044'}]}>
                 <Text style={styles.btnText}>Delete</Text>
               </Link>
             ) : (

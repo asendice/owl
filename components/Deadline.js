@@ -8,7 +8,7 @@ const Deadline = ({date, color}) => {
     <View style={styles.container}>
       <Text style={[styles.text, {color: color}]}>{readDate(date)}</Text>
       {timeRemaining < 0 ? (
-        <Text style={[styles.text, {color: 'red'}]}>Overdue</Text>
+        <Text style={[styles.text, {color: '#ff5044'}]}>Overdue</Text>
       ) : (
         <Text style={[styles.text, {color: color}]}>
           {convertMili(timeRemaining)}

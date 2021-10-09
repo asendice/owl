@@ -31,6 +31,37 @@ const CategoryModal = ({
     setOpenModal(false);
   };
 
+  const colors = [
+    {
+      color: '#ff6482',
+      name: 'pink',
+    },
+    {
+      color: '#1ec337',
+      name: 'green',
+    },
+    {
+      color: '#00bdb4',
+      name: 'mint',
+    },
+    {
+      color: '#41b0dc',
+      name: 'blue',
+    },
+    {
+      color: '#ffcc00',
+      name: 'yellow',
+    },
+    {
+      color: '#9f4bc9',
+      name: 'purple',
+    },
+    {
+      color: '#98989d',
+      name: 'grey',
+    },
+  ];
+
   return (
     <Modal animationType="slide" transparent={true} visible={openModal}>
       <View style={styles.modalContainer}>
@@ -50,51 +81,19 @@ const CategoryModal = ({
             maxLength={24}
           />
           <View style={styles.colorContainer}>
-            <TouchableOpacity
-              onPress={() => setColor('#f58b00')}
-              style={[
-                styles.colorOption,
-                {
-                  backgroundColor: '#f58b00',
-                  borderColor: color === '#f58b00' ? "#333" : "#fff",
-                },
-              ]}></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => setColor('#1ec337')}
-              style={[
-                styles.colorOption,
-                {
-                  backgroundColor: '#1ec337',
-                  borderColor: color === '#1ec337' ? "#333" : "#fff",
-                },
-              ]}></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => setColor('#00bdb4')}
-              style={[
-                styles.colorOption,
-                {
-                  backgroundColor: '#00bdb4',
-                  borderColor: color === '#00bdb4' ? "#333" : "#fff",
-                },
-              ]}></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => setColor('#41b0dc')}
-              style={[
-                styles.colorOption,
-                {
-                  backgroundColor: '#41b0dc',
-                  borderColor: color === '#41b0dc' ? "#333" : "#fff",
-                },
-              ]}></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => setColor('#9f4bc9')}
-              style={[
-                styles.colorOption,
-                {
-                  backgroundColor: '#9f4bc9',
-                  borderColor: color === '#9f4bc9' ? "#333" : "#fff",
-                },
-              ]}></TouchableOpacity>
+            {colors.map(item => {
+              return (
+                <TouchableOpacity
+                  onPress={() => setColor(item.color)}
+                  style={[
+                    styles.colorOption,
+                    {
+                      backgroundColor: item.color,
+                      borderColor: color === item.color ? '#333' : '#fff',
+                    },
+                  ]}></TouchableOpacity>
+              );
+            })}
           </View>
           <TouchableOpacity
             style={styles.confirmButton}
@@ -113,14 +112,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 100
+    marginBottom: 100,
   },
   modalInput: {
     fontSize: 24,
   },
   modalView: {
     height: 200,
-    width: "90%",
+    width: '90%',
     backgroundColor: '#fff',
     borderRadius: 20,
     alignItems: 'center',

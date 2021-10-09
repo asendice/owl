@@ -143,7 +143,7 @@ const ProjectTasks = ({
           />
           <Icon
             name="delete"
-            style={[styles.icon, {color: 'red'}]}
+            style={[styles.icon, {color: '#ff5044'}]}
             onPress={() => {
               setOption('Delete');
               setOpenOptionModal(true);

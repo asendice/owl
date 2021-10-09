@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     width: '100%',
-    height: 80,
+    height: 100,
     borderTopWidth: 1,
     borderTopColor: '#d3d3d3',
     backgroundColor: '#333',
+    // backgroundColor: '#d3d3d3',
   },
   navIcons: {
     padding: 10,
