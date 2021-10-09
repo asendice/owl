@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Icon from 'react-native-vector-icons/dist/MaterialIcons';
+import Icon from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 Icon.loadFont();
 import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import {SwipeListView} from 'react-native-swipe-list-view';
@@ -129,7 +129,12 @@ const ProjectTasks = ({
         <Text style={styles.text}>Project Tasks</Text>
         <View style={styles.iconContainer}>
           <Icon
-            name="edit"
+            style={[styles.icon, {color: color ? color : '#333'}]}
+            name="file-plus"
+            onPress={() => setOpenModal(true)}
+          />
+          <Icon
+            name="folder-edit"
             style={[styles.icon, {color: 'orange'}]}
             onPress={() => {
               setOption('Edit');
@@ -143,11 +148,6 @@ const ProjectTasks = ({
               setOption('Delete');
               setOpenOptionModal(true);
             }}
-          />
-          <Icon
-            style={[styles.icon, {color: color ? color : '#333'}]}
-            name="note-add"
-            onPress={() => setOpenModal(true)}
           />
         </View>
       </View>
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   icon: {
-    fontSize: 33,
+    fontSize: 30,
   },
   iconContainer: {
     flexDirection: 'row',

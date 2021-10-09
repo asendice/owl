@@ -31,7 +31,7 @@ const ProjectItem = ({project, setSelectedProject}) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
+    height: 130,
     width: 230,
     padding: 10,
     borderRadius: 20,

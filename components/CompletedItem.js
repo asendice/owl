@@ -1,18 +1,22 @@
 import React from 'react';
-import {readDate} from '../utils/auth';
 import {View, Text, StyleSheet} from 'react-native';
 
 const CompletedItem = ({project}) => {
   return (
-    <View style={[styles.container]}>
+    <View
+      style={[
+        styles.container,
+        {backgroundColor: '#333'},
+        // {backgroundColor: project.category.categoryColor},
+      ]}>
       <Text style={{color: project.category.categoryColor}}>
         {project.category.name}
       </Text>
-      <Text style={styles.tasks}>{project.tasks.length} Tasks</Text>
       <Text style={[styles.title, {color: project.category.categoryColor}]}>
         {project.title}
       </Text>
-      <Text style={styles.date}>{readDate(project.date)}</Text>
+      {/* <Text style={styles.date}>Complete</Text> */}
+      {/* <Text style={styles.date}>{readDate(project.date)}</Text> */}
     </View>
   );
 };
@@ -24,7 +28,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 20,
     margin: 5,
-    backgroundColor: '#d3d3d3',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
@@ -35,9 +38,10 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '600',
     color: '#333',
+    textDecorationLine: "line-through"
   },
   date: {
-    color: '#333',
+    color: '#fff',
   },
 });
 

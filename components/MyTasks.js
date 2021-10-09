@@ -18,7 +18,8 @@ const MyTasks = ({tasks}) => {
           <View style={styles.textContainer}>
             <Text style={styles.taskHeader}>To Do</Text>
             <Text style={styles.text}>
-              {tasks.length} tasks - {highPrio.length} high priority
+              {tasks.length - completed.length} tasks -{' '}
+              {highPrio.length - completed.length} high priority
             </Text>
           </View>
         </View>

@@ -1,5 +1,6 @@
 import React from 'react';
 import CompledtedItem from './CompletedItem';
+import ProjectItem from './ProjectItem';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 
 const Completed = ({completedProjects}) => {
@@ -21,7 +22,6 @@ const Completed = ({completedProjects}) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 10,
-    width: '90%',
   },
   header: {
     fontSize: 18,

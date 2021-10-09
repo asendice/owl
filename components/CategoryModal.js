@@ -47,6 +47,7 @@ const CategoryModal = ({
             style={styles.modalInput}
             placeholder="Category Name"
             onChangeText={setCategoryName}
+            maxLength={24}
           />
           <View style={styles.colorContainer}>
             <TouchableOpacity
