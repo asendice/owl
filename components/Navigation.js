@@ -16,6 +16,11 @@ const Navigation = () => {
           <Icon name="folder" size={28} color="#333" />
         </View>
       </Link>
+      <Link to="/completed" component={TouchableOpacity}>
+        <View style={styles.navIcons}>
+          <Icon name="check" size={28} color="#333" />
+        </View>
+      </Link>
     </View>
   );
 };

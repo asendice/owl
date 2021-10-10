@@ -84,6 +84,7 @@ const CategoryModal = ({
             {colors.map(item => {
               return (
                 <TouchableOpacity
+                  key={item.name}
                   onPress={() => setColor(item.color)}
                   style={[
                     styles.colorOption,

@@ -7,7 +7,7 @@ import MyTasks from './MyTasks';
 import Completed from './Completed';
 import Search from './Search';
 
-const Home = ({projects, setSelectedProject, completedProjects}) => {
+const Home = ({projects, setSelectedProject}) => {
   const [term, setTerm] = useState('');
 
   const arrOfTasks = projects.map(proj => {
@@ -28,7 +28,6 @@ const Home = ({projects, setSelectedProject, completedProjects}) => {
         setTerm={setTerm}
       />
       <MyTasks tasks={arrOfTasks.flat()} />
-      <Completed completedProjects={completedProjects} />
     </SafeAreaView>
   );
 };

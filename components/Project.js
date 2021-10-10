@@ -11,6 +11,8 @@ import {
 
 const Project = ({selectedProject, addTasks, deleteProject, completeProject}) => {
   const [tasks, setTasks] = useState(selectedProject.tasks);
+  console.log(selectedProject.tasks, "selectedProject")
+
 
   useEffect(() => {
     addTasks(tasks, selectedProject.id);

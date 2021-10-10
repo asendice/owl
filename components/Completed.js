@@ -1,19 +1,17 @@
 import React from 'react';
-import CompledtedItem from './CompletedItem';
 import ProjectItem from './ProjectItem';
+import Header from './Header';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 
-const Completed = ({completedProjects}) => {
-  const renderProjects = ({item}) => <CompledtedItem project={item} />;
+const Completed = ({projects, selectedProject, setSelectedProject}) => {
+  const renderProjects = ({item}) => (
+    <ProjectItem project={item} setSelectedProject={setSelectedProject} />
+  );
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Completed Projects</Text>
+      <Header title="Completed Projects" />
       <View style={styles.flatList}>
-        <FlatList
-          data={completedProjects}
-          renderItem={renderProjects}
-          horizontal={true}
-        />
+        <FlatList data={projects} renderItem={renderProjects} />
       </View>
     </View>
   );
@@ -30,6 +28,7 @@ const styles = StyleSheet.create({
   },
   flatList: {
     padding: 10,
+    justifyContent: 'center',
   },
 });
 

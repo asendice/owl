@@ -5,12 +5,19 @@ import CreateProject from './components/CreateProject';
 import EditProject from './components/EditProject';
 import Navigation from './components/Navigation';
 import Project from './components/Project';
+import Completed from './components/Completed';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
 const App = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState({});
-  const [completedProjects, setCompletedProjects] = useState([]);
+
+  const activeProjects = projects.filter(prj => prj.complete === false);
+  const completedProjects = projects.filter(prj => prj.complete === true);
+
+  // console.log(projects, "projects")
+  // console.log(activeProjects, "activeProjects")
+  // console.log(completedProjects, "completedProjects")
 
   const addTasks = (tasks, id) => {
     const project = projects.filter(proj => proj.id === id);
@@ -29,10 +36,11 @@ const App = () => {
     setProjects([...otherProjects, proj]);
   };
 
-  const completeProject = proj => {
-    console.log(proj, "proj")
-    setCompletedProjects([...completedProjects, proj]);
-    deleteProject(proj.id);
+  const completeProject = item => {
+    const project = projects.filter(proj => proj.id === item.id);
+    const otherProjects = projects.filter(proj => proj.id != item.id);
+    project[0].complete = true;
+    setProjects([...otherProjects, project[0]]);
   };
 
   return (
@@ -43,24 +51,36 @@ const App = () => {
           path="/"
           render={() => (
             <Home
-              projects={projects}
+              projects={activeProjects}
               setSelectedProject={setSelectedProject}
-              completedProjects={completedProjects}
             />
           )}
         />
         <Route
           path="/createproject"
           render={() => (
-            <CreateProject projects={projects} setProjects={setProjects} />
+            <CreateProject
+              projects={activeProjects}
+              setProjects={setProjects}
+            />
+          )}
+        />
+        <Route
+          path="/completed"
+          render={() => (
+            <Completed
+              projects={completedProjects}
+              selectedProject={selectedProject}
+              setSelectedProject={setSelectedProject}
+            />
           )}
         />
         <Route
           path="/editproject"
           render={() => (
             <EditProject
-              selectedProject={selectedProject}
               editProject={editProject}
+              selectedProject={selectedProject}
             />
           )}
         />
@@ -68,7 +88,7 @@ const App = () => {
           path="/project"
           render={() => (
             <Project
-              projects={projects}
+              projects={activeProjects}
               selectedProject={selectedProject}
               addTasks={addTasks}
               deleteProject={deleteProject}
