@@ -265,7 +265,6 @@ const styles = StyleSheet.create({
   },
   flatList: {
     backgroundColor: '#d3d3d3',
-    // borderRadius: 10,
     marginTop: 20,
     height: 420,
   },

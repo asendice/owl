@@ -6,6 +6,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 const ProjectItem = ({project, setSelectedProject}) => {
   const completed = project.tasks.filter(task => task.complete === true);
+  const progress = project.tasks.filter(task => task.inProgress === true);
   return (
     <Link
       to="/project"
@@ -21,9 +22,8 @@ const ProjectItem = ({project, setSelectedProject}) => {
           {project.category.name}
         </Text>
         <Text style={styles.text}>
-          {completed.length}
-          /
-          {project.tasks.length}
+          {project.tasks.length - progress.length - completed.length}/
+          {progress.length}/{completed.length}
         </Text>
         <Text style={[styles.title, {color: project.category.categoryColor}]}>
           {project.title}

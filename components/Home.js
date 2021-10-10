@@ -15,12 +15,12 @@ const Home = ({projects, setSelectedProject}) => {
   });
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Header title="Project Owl" />
         <Text style={styles.date}>{readDate(new Date())}</Text>
       </View>
-      <Search term={term} setTerm={setTerm} />
+      <Search term={term} setTerm={setTerm} placeholder="Search by title or category name..." />
       <HomeProjects
         projects={projects}
         setSelectedProject={setSelectedProject}
@@ -33,6 +33,10 @@ const Home = ({projects, setSelectedProject}) => {
 };
 
 const styles = StyleSheet.create({
+  container:{
+    height: 700,
+    justifyContent: "space-evenly"
+  },
   header: {
     flexDirection: 'row',
     alignItems: 'center',

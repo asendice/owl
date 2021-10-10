@@ -19,7 +19,7 @@ const NoProjectContent = () => {
 const styles = StyleSheet.create({
   container: {
     height: 130,
-    width: 130,
+    width: 230,
     padding: 10,
     borderWidth: 1,
     borderRadius: 20,
@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     color: '#00c7be',
     fontWeight: '600',
   },
   icon: {
-    fontSize: 24,
+    fontSize: 34,
     color: '#00c7be',
   },
 });

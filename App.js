@@ -11,13 +11,8 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 const App = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState({});
-
   const activeProjects = projects.filter(prj => prj.complete === false);
   const completedProjects = projects.filter(prj => prj.complete === true);
-
-  // console.log(projects, "projects")
-  // console.log(activeProjects, "activeProjects")
-  // console.log(completedProjects, "completedProjects")
 
   const addTasks = (tasks, id) => {
     const project = projects.filter(proj => proj.id === id);
@@ -32,7 +27,9 @@ const App = () => {
   };
 
   const editProject = proj => {
+    console.log(proj, "proj")
     const otherProjects = projects.filter(prj => prj.id !== proj.id);
+    console.log([...otherProjects, proj], "LOOK AT ME")
     setProjects([...otherProjects, proj]);
   };
 

@@ -1,17 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ProjectItem from './ProjectItem';
 import Header from './Header';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
+import Search from './Search';
 
 const Completed = ({projects, selectedProject, setSelectedProject}) => {
+  const [term, setTerm] = useState('');
   const renderProjects = ({item}) => (
     <ProjectItem project={item} setSelectedProject={setSelectedProject} />
   );
   return (
     <View style={styles.container}>
       <Header title="Completed Projects" />
+      <Search
+        term={term}
+        setTerm={setTerm}
+        placeholder="Search by title or category name..."
+      />
       <View style={styles.flatList}>
-        <FlatList data={projects} renderItem={renderProjects} />
+        <FlatList
+          data={projects.filter(
+            prj =>
+              prj.title.toLowerCase().includes(term.toLowerCase()) ||
+              prj.category.name.toLowerCase().includes(term.toLowerCase()),
+          )}
+          renderItem={renderProjects}
+        />
       </View>
     </View>
   );
@@ -28,7 +42,7 @@ const styles = StyleSheet.create({
   },
   flatList: {
     padding: 10,
-    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
