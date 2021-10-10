@@ -2,12 +2,15 @@ import React from 'react';
 import {readDate, convertMili} from '../utils/auth';
 import {View, Text, StyleSheet} from 'react-native';
 
-const Deadline = ({date, color}) => {
+const Deadline = ({date, completedDate, timestamp, color}) => {
   const timeRemaining = date - new Date();
+  const duration = completedDate - timestamp;
   return (
     <View style={styles.container}>
       <Text style={[styles.text, {color: color}]}>{readDate(date)}</Text>
-      {timeRemaining < 0 ? (
+      {completedDate ? (
+        <Text style={styles.text}>{convertMili(duration)}</Text>
+      ) : !completedDate && timeRemaining < 0 ? (
         <Text style={[styles.text, {color: '#ff5044'}]}>Overdue</Text>
       ) : (
         <Text style={[styles.text, {color: color}]}>
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    color: '#333',
+    color: '#00c7be',
     fontWeight: '600',
   },
   itemText: {

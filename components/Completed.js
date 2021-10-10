@@ -7,7 +7,7 @@ import Search from './Search';
 const Completed = ({projects, selectedProject, setSelectedProject}) => {
   const [term, setTerm] = useState('');
   const renderProjects = ({item}) => (
-    <ProjectItem project={item} setSelectedProject={setSelectedProject} />
+    <ProjectItem project={item} setSelectedProject={setSelectedProject} completed={true} />
   );
   return (
     <View style={styles.container}>

@@ -28,7 +28,12 @@ const ProjectItem = ({project, setSelectedProject}) => {
         <Text style={[styles.title, {color: project.category.categoryColor}]}>
           {project.title}
         </Text>
-        <Deadline date={project.date} color="#fff" />
+        <Deadline
+          date={project.date}
+          color="#fff"
+          completedDate={project.completedDate}
+          timestamp={project.timestamp}
+        />
       </View>
     </Link>
   );

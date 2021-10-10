@@ -27,9 +27,7 @@ const App = () => {
   };
 
   const editProject = proj => {
-    console.log(proj, "proj")
     const otherProjects = projects.filter(prj => prj.id !== proj.id);
-    console.log([...otherProjects, proj], "LOOK AT ME")
     setProjects([...otherProjects, proj]);
   };
 
@@ -37,6 +35,7 @@ const App = () => {
     const project = projects.filter(proj => proj.id === item.id);
     const otherProjects = projects.filter(proj => proj.id != item.id);
     project[0].complete = true;
+    project[0].completedDate = new Date();
     setProjects([...otherProjects, project[0]]);
   };
 
