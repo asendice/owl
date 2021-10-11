@@ -56,7 +56,7 @@ const App = () => {
           path="/createproject"
           render={() => (
             <CreateProject
-              projects={activeProjects}
+              projects={projects}
               setProjects={setProjects}
             />
           )}
@@ -84,7 +84,6 @@ const App = () => {
           path="/project"
           render={() => (
             <Project
-              projects={activeProjects}
               selectedProject={selectedProject}
               addTasks={addTasks}
               deleteProject={deleteProject}

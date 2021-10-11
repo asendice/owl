@@ -2,22 +2,18 @@ import React, {useState, useEffect} from 'react';
 import Header from '../components/Header';
 import Deadline from '../components/Deadline';
 import ProjectTasks from '../components/ProjectTasks';
-import {
-  SafeAreaView,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
-const Project = ({selectedProject, addTasks, deleteProject, completeProject}) => {
+const Project = ({
+  selectedProject,
+  addTasks,
+  deleteProject,
+  completeProject,
+}) => {
   const [tasks, setTasks] = useState(selectedProject.tasks);
-  console.log(selectedProject.tasks, "selectedProject")
-
-
   useEffect(() => {
     addTasks(tasks, selectedProject.id);
   }, [tasks]);
-
   return (
     <SafeAreaView style={styles.container}>
       <Deadline date={selectedProject.date} />
@@ -33,7 +29,6 @@ const Project = ({selectedProject, addTasks, deleteProject, completeProject}) =>
         deleteProject={deleteProject}
         completeProject={completeProject}
       />
-   
     </SafeAreaView>
   );
 };

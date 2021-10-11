@@ -4,7 +4,9 @@ Icon.loadFont();
 import {View, Text, StyleSheet} from 'react-native';
 
 const MyTasks = ({tasks}) => {
-  const highPrio = tasks.filter(task => task.priority === 'High');
+  const highPrio = tasks.filter(
+    task => task.priority === 'High' && task.complete === false,
+  );
   const progress = tasks.filter(task => task.inProgress === true);
   const completed = tasks.filter(task => task.complete === true);
   return (
@@ -18,8 +20,8 @@ const MyTasks = ({tasks}) => {
           <View style={styles.textContainer}>
             <Text style={styles.taskHeader}>To Do</Text>
             <Text style={styles.text}>
-              {tasks.length - completed.length} tasks -{' '}
-              {highPrio.length - completed.length} high priority
+              {tasks.length - completed.length} tasks - {highPrio.length} high
+              priority
             </Text>
           </View>
         </View>
