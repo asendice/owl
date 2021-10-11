@@ -20,7 +20,9 @@ const ProjectTasks = ({
   completeProject,
 }) => {
   const [task, setTask] = useState({});
-  const [status, setStatus] = useState('Untouched');
+  const [status, setStatus] = useState(
+    selectedProject.complete === true ? 'Completed' : 'Untouched',
+  );
   const [openModal, setOpenModal] = useState(false);
   const [openOptionModal, setOpenOptionModal] = useState(false);
   const [option, setOption] = useState('Edit');
@@ -73,7 +75,7 @@ const ProjectTasks = ({
         <View style={styles.optionsContainer}>
           <TouchableOpacity
             onPress={() => onInProgressTask(item.id)}
-            style={[styles.options, {backgroundColor: '#f58b00'}]}>
+            style={[styles.options, {backgroundColor: '#00c7be'}]}>
             <Text style={styles.optionText}>In Progress</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -128,44 +130,75 @@ const ProjectTasks = ({
       <View style={styles.header}>
         <Text style={styles.text}>Project Tasks</Text>
         <View style={styles.iconContainer}>
-          <Icon
-            style={[styles.icon, {color: color ? color : '#333'}]}
-            name="file-plus"
-            onPress={() => setOpenModal(true)}
-          />
-          <Icon
-            name="folder-edit"
-            style={[styles.icon, {color: 'orange'}]}
+          <TouchableOpacity
+            disabled={selectedProject.complete === true ? true : false}
+            onPress={() => setOpenModal(true)}>
+            <Icon
+              style={[
+                styles.icon,
+                {color: selectedProject.complete === true ? 'grey' : color},
+              ]}
+              name="file-plus"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            disabled={selectedProject.complete === true ? true : false}
             onPress={() => {
               setOption('Edit');
               setOpenOptionModal(true);
-            }}
-          />
-          <Icon
-            name="delete"
-            style={[styles.icon, {color: '#ff5044'}]}
+            }}>
+            <Icon
+              name="folder-edit"
+              style={[
+                styles.icon,
+                {color: selectedProject.complete === true ? 'grey' : 'orange'},
+              ]}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            disabled={selectedProject.complete === true ? true : false}
             onPress={() => {
               setOption('Delete');
               setOpenOptionModal(true);
-            }}
-          />
+            }}>
+            <Icon
+              name="delete"
+              style={[
+                styles.icon,
+                {color: selectedProject.complete === true ? 'grey' : '#ff5044'},
+              ]}
+            />
+          </TouchableOpacity>
         </View>
       </View>
 
       <View style={styles.statusButtons}>
         <TouchableOpacity
           onPress={() => setStatus('Untouched')}
+          disabled={selectedProject.complete === true ? true : false}
           style={[
             styles.statusBtn,
             {backgroundColor: status === 'Untouched' ? color : 'grey'},
+            {opacity: selectedProject.complete === true ? 0.5 : 1},
           ]}>
           <Text style={styles.statusText}>New Tasks</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => setStatus('In Progress')}
+          disabled={
+            selectedProject.complete === true || inProgress.length <= 0
+              ? true
+              : false
+          }
           style={[
             styles.statusBtn,
             {backgroundColor: status === 'In Progress' ? color : 'grey'},
+            {
+              opacity:
+                selectedProject.complete === true || inProgress.length <= 0
+                  ? 0.5
+                  : 1,
+            },
           ]}>
           <Text>In Progress</Text>
         </TouchableOpacity>
@@ -193,6 +226,7 @@ const ProjectTasks = ({
       </View>
       {newTasks.length === 0 &&
       inProgress.length === 0 &&
+      selectedProject.complete === false &&
       completed.length > 0 ? (
         <Link
           style={[styles.completeBtn, {backgroundColor: color}]}

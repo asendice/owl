@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 Icon.loadFont();
 import {Link} from 'react-router-native';
 import {View, TouchableOpacity, StyleSheet} from 'react-native';
-const Navigation = () => {
+const Navigation = ({disable}) => {
   return (
     <View style={styles.navigation}>
       <Link to="/" component={TouchableOpacity}>
@@ -16,8 +16,12 @@ const Navigation = () => {
           <Icon name="folder" size={28} color="#333" />
         </View>
       </Link>
-      <Link to="/completed" component={TouchableOpacity}>
-        <View style={styles.navIcons}>
+      <Link to="/completed" component={TouchableOpacity} disabled={disable}>
+        <View
+          style={[
+            styles.navIcons,
+            {backgroundColor: disable ? 'grey' : '#00c7be'},
+          ]}>
           <Icon name="check" size={28} color="#333" />
         </View>
       </Link>

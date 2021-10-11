@@ -11,13 +11,14 @@ const TaskItem = ({task, color}) => {
       ? '#f5c400'
       : '#1ec337';
 
-  const bkgColor = task.inProgress ? '#f58b00' : task.complete ? color : '#333';
+  const bkgColor = task.inProgress ? '#00c7be' : task.complete ? color : '#333';
 
   return (
     <View style={[styles.listItem, {backgroundColor: bkgColor}]}>
       <Text
         style={[
           styles.text,
+          {color: task.inProgress ? "#333" : "#fff"},
           {textDecorationLine: task.complete ? 'line-through' : 'none'},
         ]}>
         {task.name}

@@ -16,7 +16,12 @@ const Project = ({
   }, [tasks]);
   return (
     <SafeAreaView style={styles.container}>
-      <Deadline date={selectedProject.date} />
+      <Deadline
+        date={selectedProject.date}
+        color="#333"
+        completedDate={selectedProject.completedDate}
+        timestamp={selectedProject.timestamp}
+      />
       <Header title={selectedProject.title} project={selectedProject} />
       <Text style={styles.goal}>"{selectedProject.desc}"</Text>
       <ProjectTasks

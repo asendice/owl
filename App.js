@@ -55,10 +55,7 @@ const App = () => {
         <Route
           path="/createproject"
           render={() => (
-            <CreateProject
-              projects={projects}
-              setProjects={setProjects}
-            />
+            <CreateProject projects={projects} setProjects={setProjects} />
           )}
         />
         <Route
@@ -91,7 +88,7 @@ const App = () => {
             />
           )}
         />
-        <Navigation />
+        <Navigation disable={completedProjects.length > 0 ? false : true} />
       </SafeAreaView>
     </NativeRouter>
   );
