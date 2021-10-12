@@ -79,7 +79,10 @@ const ProjectTasks = ({
             <Text style={styles.optionText}>In Progress</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => onCompleteTask(item.id)}
+            onPress={() => {
+              onCompleteTask(item.id);
+              setStatus('Completed');
+            }}
             style={[styles.options, {backgroundColor: color}]}>
             <Text style={styles.optionText}>Complete</Text>
           </TouchableOpacity>
@@ -95,7 +98,7 @@ const ProjectTasks = ({
           data={newTasks}
           renderItem={renderTasks}
           leftOpenValue={110}
-          rightOpenValue={-214}
+          rightOpenValue={-224}
           renderHiddenItem={renderHiddenOptions}
           friction={8}
           tension={-2}
@@ -217,7 +220,16 @@ const ProjectTasks = ({
       </View>
       <View style={styles.flatList}>
         {status === 'Untouched' ? (
-          renderUntouched()
+          <>
+            {renderUntouched()}
+            <View style={styles.addBtnContainer}>
+              <TouchableOpacity
+                onPress={() => setOpenModal(true)}
+                style={[styles.addBtn, {backgroundColor: color}]}>
+                <Text style={styles.btnText}>ADD A TASK</Text>
+              </TouchableOpacity>
+            </View>
+          </>
         ) : status === 'In Progress' ? (
           renderInProgress()
         ) : (
@@ -257,7 +269,7 @@ const ProjectTasks = ({
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    marginTop: 40,
     minHeight: 100,
   },
   header: {
@@ -280,7 +292,6 @@ const styles = StyleSheet.create({
     padding: 3,
     backgroundColor: '#333',
   },
-
   statusButtons: {
     marginTop: 10,
     flexDirection: 'row',
@@ -300,7 +311,7 @@ const styles = StyleSheet.create({
   flatList: {
     backgroundColor: '#d3d3d3',
     marginTop: 20,
-    height: 420,
+    height: 450,
   },
   hiddenContainer: {
     flexDirection: 'row',
@@ -318,7 +329,6 @@ const styles = StyleSheet.create({
   options: {
     flex: 1,
     height: 60,
-    // borderRadius: 10,
     backgroundColor: 'pink',
     justifyContent: 'center',
     alignItems: 'center',
@@ -326,9 +336,8 @@ const styles = StyleSheet.create({
   deleteOption: {
     flex: 1,
     padding: 15,
-    backgroundColor: 'red',
+    backgroundColor: '#ff5044',
     height: '100%',
-    // borderRadius: 10,
     height: 60,
     justifyContent: 'center',
   },
@@ -348,6 +357,23 @@ const styles = StyleSheet.create({
     color: '#333',
     fontSize: 18,
     fontWeight: '600',
+  },
+  addBtnContainer: {
+    padding: 5,
+    alignItems: 'center',
+  },
+  addBtn: {
+    alignItems: 'center',
+    alignSelf: 'center',
+    backgroundColor: '#333',
+    borderRadius: 20,
+    padding: 10,
+    width: '100%',
+  },
+  btnText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#fff',
   },
 });
 

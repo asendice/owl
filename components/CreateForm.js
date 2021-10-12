@@ -111,6 +111,7 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
           <TextInput
             style={styles.titleInput}
             placeholder="Your Project's Title"
+            placeholderTextColor="grey"
             onChangeText={setTitle}
             value={title}
             maxLength={28}
@@ -177,6 +178,7 @@ const CreateForm = ({setProj, selectedProject, editProject}) => {
           <TextInput
             style={[styles.goalInput, {height: 40}]}
             placeholder="Goal of your Project"
+            placeholderTextColor="grey"
             onChangeText={setDesc}
             value={desc}
             blurOnSubmit={true}

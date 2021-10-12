@@ -49,8 +49,10 @@ const TaskModal = ({openModal, setOpenModal, color, setTask, projId}) => {
           <TextInput
             style={styles.input}
             placeholder="Task Name"
+            placeholderTextColor="grey"
             onChangeText={setName}
             maxLength={28}
+            autoFocus={true}
           />
           <View style={styles.priority}>
             <Text style={styles.textHeader}>Priority</Text>

@@ -77,8 +77,10 @@ const CategoryModal = ({
           <TextInput
             style={styles.modalInput}
             placeholder="Category Name"
+            placeholderTextColor="grey"
             onChangeText={setCategoryName}
             maxLength={24}
+            autoFocus={true}
           />
           <View style={styles.colorContainer}>
             {colors.map(item => {

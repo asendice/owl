@@ -40,8 +40,8 @@ const App = () => {
   };
 
   return (
-    <NativeRouter>
-      <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <NativeRouter>
         <Route
           exact
           path="/"
@@ -89,14 +89,15 @@ const App = () => {
           )}
         />
         <Navigation disable={completedProjects.length > 0 ? false : true} />
-      </SafeAreaView>
-    </NativeRouter>
+      </NativeRouter>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
   },
 });
 

@@ -18,7 +18,7 @@ const TaskItem = ({task, color}) => {
       <Text
         style={[
           styles.text,
-          {color: task.inProgress ? "#333" : "#fff"},
+          {color: task.inProgress || task.complete ? "#333" : "#fff"},
           {textDecorationLine: task.complete ? 'line-through' : 'none'},
         ]}>
         {task.name}
@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#d3d3d3',
     backgroundColor: '#333',
-    // borderRadius: 10,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -46,7 +45,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: '600',
-    fontSize: 18,
+    fontSize: 20,
     color: '#fff',
   },
   flagContainer: {

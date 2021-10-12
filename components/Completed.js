@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   flatList: {
     padding: 10,
-    height: 420,
+    height: 620,
     alignItems: 'center',
   },
 });

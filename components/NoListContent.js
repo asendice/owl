@@ -18,11 +18,7 @@ const NoListContent = ({color, setOpenModal, section}) => {
         </Text>
       )}
 
-      <TouchableOpacity
-        onPress={() => setOpenModal(true)}
-        style={styles.addBtn}>
-        <Text style={styles.btnText}>ADD A TASK</Text>
-      </TouchableOpacity>
+      
     </View>
   );
 };
@@ -43,19 +39,7 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
 
-  addBtn: {
-    marginTop: 10,
-    alignItems: 'center',
-    backgroundColor: '#333',
-    borderRadius: 20,
-    padding: 5,
-    width: 200,
-  },
-  btnText: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#fff',
-  },
+
 });
 
 export default NoListContent;
