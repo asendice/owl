@@ -100,8 +100,6 @@ const ProjectTasks = ({
           leftOpenValue={110}
           rightOpenValue={-224}
           renderHiddenItem={renderHiddenOptions}
-          friction={8}
-          tension={-2}
         />
       );
     } else {
@@ -117,8 +115,6 @@ const ProjectTasks = ({
           leftOpenValue={110}
           rightOpenValue={-110}
           renderHiddenItem={renderHiddenOptions}
-          friction={8}
-          tension={-2}
         />
       );
     } else {
@@ -269,7 +265,7 @@ const ProjectTasks = ({
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
+    marginTop: 20,
     minHeight: 100,
   },
   header: {
@@ -311,7 +307,7 @@ const styles = StyleSheet.create({
   flatList: {
     backgroundColor: '#d3d3d3',
     marginTop: 20,
-    height: 450,
+    height: 420,
   },
   hiddenContainer: {
     flexDirection: 'row',

@@ -7,7 +7,13 @@ const Deadline = ({date, completedDate, timestamp, color}) => {
   const duration = completedDate - timestamp;
   return (
     <View style={styles.container}>
-      <Text style={[styles.text, {color: color}]}>{readDate(date)}</Text>
+      {completedDate ? (
+        <Text style={[styles.text]}>
+          {readDate(completedDate)}
+        </Text>
+      ) : (
+        <Text style={[styles.text, {color: color}]}>{readDate(date)}</Text>
+      )}
       {completedDate ? (
         <Text style={styles.text}>{convertMili(duration)}</Text>
       ) : !completedDate && timeRemaining < 0 ? (
