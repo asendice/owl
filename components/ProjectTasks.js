@@ -98,7 +98,7 @@ const ProjectTasks = ({
           data={newTasks}
           renderItem={renderTasks}
           leftOpenValue={110}
-          rightOpenValue={-224}
+          rightOpenValue={-212}
           renderHiddenItem={renderHiddenOptions}
         />
       );
