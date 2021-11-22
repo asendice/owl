@@ -12,45 +12,27 @@ const Navigation = ({disable}) => {
         to="/"
         component={TouchableOpacity}
         onPress={() => setActive('home')}>
-        {/* <View
-          style={[
-            styles.navIcons,
-            // {borderBottomColor: active === 'home' ? '#fff' : '#00c7be'},
-            // {borderBottomWidth: active === 'home' ? 3 : 1},
-          ]}> */}
         <Icon name="home" size={28} color="#333" />
-        {/* </View> */}
       </Link>
       <Link
         style={styles.navIcons}
         to="/createproject"
         component={TouchableOpacity}
         onPress={() => setActive('create')}>
-        {/* <View
-          style={[
-            styles.navIcons,
-            // {borderBottomColor: active === 'create' ? '#fff' : '#00c7be'},
-            // {borderBottomWidth: active === 'create' ? 3 : 1},
-          ]}> */}
         <Icon name="folder" size={28} color="#333" />
-        {/* </View> */}
       </Link>
       <Link
-        style={styles.navIcons}
+        style={[
+          styles.navIcons,
+          {backgroundColor: disable ? 'grey' : '#00c7be'},
+          {borderColor: disable ? 'grey' : '#00c7be'},
+        ]}
         to="/completed"
         component={TouchableOpacity}
         disabled={disable}
         onPress={() => setActive('completed')}>
-        {/* <View
-          style={[
-            styles.navIcons,
-            {backgroundColor: disable ? 'grey' : '#00c7be'},
-            {borderColor: disable ? 'grey' : '#00c7be'},
-            // {borderBottomColor: active === 'completed' ? '#fff' : 'grey'},
-            // {borderBottomWidth: active === 'completed' ? 3 : 1},
-          ]}> */}
+     
         <Icon name="check" size={28} color="#333" />
-        {/* </View> */}
       </Link>
     </View>
   );
@@ -70,7 +52,6 @@ const styles = StyleSheet.create({
   },
   navIcons: {
     padding: 15,
-    // opacity: 0.8,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#00c7be',

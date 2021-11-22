@@ -7,7 +7,6 @@ const CompletedItem = ({project}) => {
       style={[
         styles.container,
         {backgroundColor: '#333'},
-        // {backgroundColor: project.category.categoryColor},
       ]}>
       <Text style={{color: project.category.categoryColor}}>
         {project.category.name}
@@ -15,8 +14,6 @@ const CompletedItem = ({project}) => {
       <Text style={[styles.title, {color: project.category.categoryColor}]}>
         {project.title}
       </Text>
-      {/* <Text style={styles.date}>Complete</Text> */}
-      {/* <Text style={styles.date}>{readDate(project.date)}</Text> */}
     </View>
   );
 };

@@ -3,7 +3,7 @@ import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import nocontent from '../img/nocontent.png';
 import nocontentprogress from '../img/nocontentprogress.png';
 
-const NoListContent = ({color, setOpenModal, section}) => {
+const NoListContent = ({section}) => {
   return (
     <View style={styles.container}>
       <Image
@@ -17,8 +17,6 @@ const NoListContent = ({color, setOpenModal, section}) => {
           “Strive for progress, not perfection.” - Anonymous
         </Text>
       )}
-
-      
     </View>
   );
 };
