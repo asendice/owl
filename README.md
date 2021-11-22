@@ -1,6 +1,6 @@
 # Owl
 
-This project is a project / task management mobile application written with react-native for ios. This mobile application allows the user to create projects that have a targeted deadline, specified goal, and customizable category. These projects are made up of tasks ranging from low to high priority and can be completed, set in progress, or deleted with a swipe. Projects can be completed, deleted, and updated at any time. 
+This project is a project / task management mobile application written with react-native for ios. This mobile application allows the user to create projects that have a targeted deadline, specified goal, and customizable category. These projects are made up of tasks ranging from low to high priority and can be completed, set in progress, or deleted with a swipe. 
 
 
 ## Installation
@@ -20,7 +20,6 @@ $ npx react-native run-ios
 ```
 
 ## Technologies
-
 ```Project is created with
 @react-native-community/cli: 5.0.1
 react: 17.0.2
